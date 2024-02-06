@@ -9,7 +9,7 @@
 
 	<link rel="stylesheet" href="dist/reset.css">
 	<link rel="stylesheet" href="dist/reveal.css">
-	<link rel="stylesheet" href="dist/theme/white.css">
+	<link rel="stylesheet" href="dist/theme/white.css" id="theme">
 
 	<!-- Theme used for syntax highlighted code -->
 	<link rel="stylesheet" href="plugin/highlight/monokai.css">
@@ -19,6 +19,10 @@
 			position: absolute;
 			top: 12px;
 			right: 12px;
+		}
+
+		iframe {
+			background-color: white;
 		}
 
 		iframe.code-example {
@@ -91,6 +95,9 @@
 				<p>
 					Cascading Style Sheets
 				</p>
+								
+				<hr>
+				<a href="#" id="firstSlideThemeToggle" onclick="toggleDarkmode()">Zu Darkmode Wechseln</a>
 			</section>
 			<section>
 				<h3>CSS - Mindmap</h3>
@@ -1081,6 +1088,21 @@
 			<!-- Ende CSS-Day1-->
 			</section>
 
+			<script>
+				function toggleDarkmode() {
+					const themeLink = document.getElementById('theme');
+					const firstSlideToggle = document.getElementById('firstSlideThemeToggle');
+
+					if (themeLink.getAttribute('href') == 'dist/theme/white.css') {
+						themeLink.setAttribute('href','dist/theme/black.css');
+						firstSlideToggle.textContent="Zu Lightmode Wechseln"; 
+					} else {
+						themeLink.setAttribute('href','dist/theme/white.css');
+						firstSlideToggle.textContent="Zu Darkmode Wechseln";
+					}
+				}
+			</script>
+
 			<script src="dist/reveal.js"></script>
 			<script src="plugin/notes/notes.js"></script>
 			<script src="plugin/markdown/markdown.js"></script>
@@ -1109,6 +1131,7 @@
 			<div id="hidden" style="display:none;">
 				<header>
 					<img height="40" src="dhbw-logo-small.svg" alt="DHBW-Logo">
+					<a href="javascript:void(0)" onclick="toggleDarkmode()">&#9788;</a>
 				</header>
 			</div>
 </body>
