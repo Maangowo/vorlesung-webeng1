@@ -1,0 +1,11 @@
+div {
+    background-color: var(--box-color);
+}
+
+.two {
+    --box-color: cornflowerblue;
+}
+
+.three {
+    --box-color: aquamarine;
+}

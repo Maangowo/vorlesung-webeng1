@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>
+        CSS - flex-direction
+    </title>
+    <style>
+        body {
+            display: grid;
+            grid: auto-flow / 1fr 1fr;
+            grid-auto-flow: column
+        }
+        .flexbox {
+            display: flex;
+            border: 2px solid black;
+            margin: 10px;
+        }
+
+        div div {
+            border: 1px solid red;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <h1>flex-direction: column</h1>
+        <div class="flexbox" style="flex-direction: column;">
+            <div>Block 1</div>
+            <div>Block 2</div>
+            <div>Block 3</div>
+            <div>Block 4</div>
+        </div>
+    </div>
+    <div>
+        <h1>flex-direction: column-reverse</h1>
+        <div class="flexbox" style="flex-direction: column-reverse;">
+            <div>Block 1</div>
+            <div>Block 2</div>
+            <div>Block 3</div>
+            <div>Block 4</div>
+        </div>
+    </div>
+</body>
+
+</html>

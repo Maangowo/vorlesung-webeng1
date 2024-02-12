@@ -58,6 +58,10 @@
 			margin-top: 55px;
 		}
 
+		.space-above {
+			margin-top: 40px;
+		}
+
 		.hljs-value {
 			/* color: #4f424c; Paraiso Light */
 			color: #84613d;
@@ -83,6 +87,8 @@
 	PDF-Export (/?view=print, https://revealjs.com/pdf-export/)
 	Day1: 1,3-23,34-49
 	Day1-Praxis: 24-33,50-54
+	Day2: 1,55-73,80-109
+	Day2-Praxis: 74-79,110-113
 -->
 
 <body>
@@ -1086,6 +1092,980 @@
 				</section>
 			</section>
 			<!-- Ende CSS-Day1-->
+			<!-- Start CSS-Day2 -->
+			<section>
+				<section>
+					<h3>CSS - Box-Modell</h3>
+					<img src="./images/css-Boxmodell.png" alt="CSS Boxmodel">
+				</section>
+				<section>
+					<h3>CSS - Abstände und Größe</h3>
+					<ul>
+						<li>Innenabstände (<span class="hljs-attribute">padding</span>)
+							<ul>
+								<li>-left, -right, -top, -bottom</li>
+								<li class="fragment" data-fragment-index="1">padding mit vier Werten:<br>
+									<span class="smaller-font"><span class="hljs-attribute">padding</span>: <span
+											class="hljs-value">10px 20px 30px 40px</span> (top right bottom left)</span>
+								</li>
+								<li class="fragment" data-fragment-index="2">padding mit einem Wert: alle Abstände
+									gleich</li>
+							</ul>
+						</li>
+						<li class="fragment" data-fragment-index="4">Außenabstände (<span
+								class="hljs-attribute">margin</span>)
+							<ul>
+								<li class="fragment" data-fragment-index="4">-left, -right, -top, -bottom</li>
+								<li class="fragment" data-fragment-index="4">margin mit einem und vier Werten: siehe
+									padding</li>
+							</ul>
+						</li>
+						<li class="fragment" data-fragment-index="5">Größe
+							<ul>
+								<li class="fragment" data-fragment-index="6"><span class="hljs-attribute">width</span>,
+									<span class="hljs-attribute">min-width</span>, <span
+										class="hljs-attribute">max-width</span>: Breite
+								</li>
+								<li class="fragment" data-fragment-index="7"><span class="hljs-attribute">height</span>,
+									<span class="hljs-attribute">min-height</span>, <span
+										class="hljs-attribute">max-height</span>: Höhe
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</section>
+				<section>
+					<h3>CSS - Rahmen</h3>
+					<ul>
+						<li><span class="hljs-attribute">border-width</span>: Breite des Rahmens<br>border-left-width,
+							-right-, -top-, -bottom-</li>
+						<li class="fragment"><span class="hljs-attribute">border-style</span>: Art des Rahmens
+							<ul>
+								<li><span class="hljs-value">solid</span>, <span class="hljs-value">dotted</span>, <span
+										class="hljs-value">dashed</span>, <span class="hljs-value">double</span>, <span
+										class="hljs-value">groove</span>, <span class="hljs-value">ridge</span>, <span
+										class="hljs-value">inset</span>, <span class="hljs-value">outset</span>, <span
+										class="hljs-value">hidden</span>, <span class="hljs-value">none</span></li>
+							</ul>
+						</li>
+						<li class="fragment"><span class="hljs-attribute">border-color</span>: Farbe des Rahmens</li>
+						<li class="fragment li-space-above">border: &lt;width&gt; &lt;style&gt; &lt;color&gt;<br><span
+								class="hljs-attribute">border</span>: <span class="hljs-value">1px solid red</span></li>
+					</ul>
+				</section>
+				<section>
+					<h3>CSS - Rahmen - Collapse</h3>
+					<ul>
+						<li><span class="hljs-attribute">border-collapse</span>: Zusammenfassen von direkt benachbarten
+							Rahmens
+							<ul>
+								<li><span class="hljs-value">collapse</span>, <span class="hljs-value">separate</span>
+								</li>
+							</ul>
+						</li>
+					</ul>
+					<iframe class="code-example full-width min-height-200"
+						data-src="./code-examples/05_border-collapse/border-collapse.html"></iframe>
+					<ul class="fragment">
+						<li><span class="hljs-attribute">border-collapse</span>: <span
+								class="hljs-value">collapse</span>
+							<ul>
+								<li>none + border = border</li>
+								<li>hidden + border = hidden</li>
+							</ul>
+						</li>
+					</ul>
+				</section>
+				<section>
+					<h3>CSS - Abstände und Größe</h3>
+					<iframe class="code-example full-width"
+						data-src="./code-examples/04_margin-padding/margin-padding.html"></iframe>
+					<pre class="language-html">
+						<code class="hljs" data-code="./code-examples/04_margin-padding/margin-padding.html" data-line-numbers="|9-15|16-22|23-29|30-36|37-43|44-50"></code>
+					</pre>
+				</section>
+				<section>
+					<h3>CSS - Abstände und Größe</h3>
+					<ul>
+						<li><span class="hljs-attribute">overflow</span>: Umgang mit zu großen Inhalten (<a
+								href="https://developer.mozilla.org/en-US/docs/Web/CSS/overflow">MDN</a>)
+							<ul>
+								<li><span class="hljs-value">auto</span>: Browser entscheidet</li>
+								<li class="fragment"><span class="hljs-value">visible</span>: Inhalt ragt über das
+									Element hinaus</li>
+								<li class="fragment"><span class="hljs-value">hidden</span>: Inhalt wird abgeschnitten
+								</li>
+								<li class="fragment"><span class="hljs-value">scroll</span>: Inhalt wird abgeschnitten
+									mit Scrollbar</li>
+							</ul>
+						</li>
+						<li class="fragment"><span class="hljs-attribute">clip</span>: Inhalt unabhängig von der Größe
+							des Elementes zuschneiden
+							<ul>
+								<li class="fragment">shape value: z.B. rect(top, right, bottom, left)</li>
+							</ul>
+						</li>
+					</ul>
+				</section>
+			</section>
+			<section>
+				<section>
+					<h3>CSS - Anordnung von Elementen</h3>
+					<ul>
+						<li>Inline: &lt;span&gt;
+							<ul>
+								<li>Bildung eines inneren Bereiches Zwecks Formatierung</li>
+							</ul>
+						</li>
+						<li class="fragment">Block Semantisch: &lt;header&gt;, &lt;main&gt;, &lt;footer&gt;,
+							&lt;navigation&gt;;
+							Generisch: &lt;div&gt;
+							<ul>
+								<li class="fragment">Gruppierung von Block-Elementen</li>
+								<li class="fragment">Ohne CSS nur standard Block-Element Darstellung</li>
+							</ul>
+						</li>
+					</ul>
+				</section>
+				<section>
+					<h3>CSS - Anordnung von Elementen</h3>
+					<ul>
+						<li><span class="hljs-attribute">float</span>: <span class="hljs-value">left</span>, <span
+								class="hljs-value">right</span>, <span class="hljs-value">none</span>
+							<ul>
+								<li>Element wird vom nachfolgenden Nicht-Float-Objekt umflossen</li>
+							</ul>
+						</li>
+					</ul>
+					<iframe class="code-example full-width min-height-200"
+						data-src="./code-examples/06_float/float.html"></iframe>
+				</section>
+				<section>
+					<h3>CSS - Anordnung von Elementen</h3>
+					<ul>
+						<li><span class="hljs-attribute">clear</span>: <span class="hljs-value">left</span>, <span
+								class="hljs-value">right</span>, <span class="hljs-value">both</span>, <span
+								class="hljs-value">none</span>
+							<ul>
+								<li>Erzwingt den Abbruch des Umflusses</li>
+								<li>left: im Falle eines float: left</li>
+								<li>right: im Falle eines float: right</li>
+								<li>both: in jedem Fall</li>
+							</ul>
+						</li>
+					</ul>
+					<iframe class="code-example full-width min-height-200"
+						data-src="./code-examples/07_clear/clear.html"></iframe>
+				</section>
+				<section>
+					<h3>CSS - Anordnung von Elementen</h3>
+					<ul>
+						<li><span class="hljs-attribute">top</span>, <span class="hljs-attribute">left</span>, <span
+								class="hljs-attribute">bottom</span>, <span class="hljs-attribute">right</span>
+							<ul>
+								<li>Angabe der (relativen) Position</li>
+							</ul>
+						</li>
+						<li class="fragment"><span class="hljs-attribute">position</span>: <span
+								class="hljs-value">static</span>, <span class="hljs-value">relative</span>, <span
+								class="hljs-value">absolute</span>, <span class="hljs-value">fixed</span> (<a
+								href="https://developer.mozilla.org/en-US/docs/Web/CSS/position">MDN</a>)
+							<ul>
+								<li>static: keine besondere Positionierung</li>
+								<li class="fragment">relative: relativ zur Anfangsposition</li>
+								<li class="fragment">absolute: bezogen auf den Rand des nächsthöheren Vorfahrenelements
+								</li>
+								<li class="fragment">fixed: bezogen auf Browserfenster</li>
+								<li class="fragment">Achtung: absolute und fixed geben den ursprünglichen Platz frei!
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</section>
+				<section>
+					<h3>CSS - Anordnung von Elementen</h3>
+					<ul>
+						<li><span class="hljs-attribute">top</span>: <span class="hljs-value">5px</span>; <span
+								class="hljs-attribute">left</span>: <span class="hljs-value">5px</span>;</li>
+						<li><span class="hljs-attribute">position</span>: <span class="hljs-value">absolut</span>, <span
+								class="hljs-value">relative</span>, <span class="hljs-value">fixed</span>, <span
+								class="hljs-value">static</span></li>
+					</ul>
+					<iframe class="code-example full-width min-height-300"
+						data-src="./code-examples/08_position/position.html"></iframe>
+				</section>
+				<section>
+					<h3>CSS - Anordnung von Elementen</h3>
+					<ul>
+						<li><span class="hljs-attribute">z-index</span>: Ganzzahl
+							<ul>
+								<li>Ordnungsnummer für die Überlagerung</li>
+								<li>kleine Nummern hinten, große Nummern vorne</li>
+							</ul>
+						</li>
+					</ul>
+					<iframe class="code-example full-width min-height-300"
+						data-src="./code-examples/09_z-index/z-index.html"></iframe>
+				</section>
+			</section>
+			<section>
+				<section>
+					<h3>CSS - Sichtbarkeit</h3>
+					<ul>
+						<li><span class="hljs-attribute">visibility</span>: <span class="hljs-value">visible</span>,
+							<span class="hljs-value">hidden</span>, <span class="hljs-value">collapse</span> (<a
+								href="https://developer.mozilla.org/en-US/docs/Web/CSS/visibility">MDN</a>)<br>
+							Anzeigen mit Platzhalter
+							<ul>
+								<li class="fragment">visible: Element ist sichtbar</li>
+								<li class="fragment">hidden: Element ist nicht sichtbar</li>
+								<li class="fragment">collapse: wie hidden<br>
+									Ausnahme: in table oder flexbox <em>ohne</em> Platzhalter</li>
+							</ul>
+						</li>
+					</ul>
+				</section>
+				<section>
+					<h3>CSS - Sichtbarkeit</h3>
+					<ul>
+						<li><span class="hljs-attribute">display</span>: <span class="hljs-value">block</span>, <span
+								class="hljs-value">inline</span>, <span class="hljs-value">inline-block</span>,<br><span
+								class="hljs-value">list-item</span>, <span class="hljs-value">none</span>, ... (<a
+								href="https://developer.mozilla.org/en-US/docs/Web/CSS/display">MDN</a>)<br>
+							Anzeigen ohne Platzhalter
+							<ul>
+								<li class="fragment">block: erzwingt Block-Element</li>
+								<li class="fragment">inline: erzwingt Inline-Element</li>
+								<li class="fragment">none: Element ist nicht sichtbar</li>
+								<li class="fragment li-space-above">inline-block: Block-Element das umflossen wird wie
+									ein Inline-Element</li>
+								<li class="fragment li-space-above">list-item: wie block, aber mit Aufzählungszeichen
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</section>
+			</section>
+			<section>
+				<section>
+					<h3>CSS - Custom-Properties</h3>
+					<p>aka. CSS Variablen</p>
+					<p class="fragment" data-fragment-index="1">Deklarieren</p>
+					<pre class="language-css fragment" data-fragment-index="1">
+						<code class="hljs" style="max-height: 300px" data-line-numbers="1-4">:root {
+	--main-bg-color: red;
+}
+						</code>
+					</pre>
+					<p class="fragment" data-fragment-index="2">Lesen</p>
+					<pre class="language-css fragment" data-fragment-index="2">
+						<code class="hljs" style="max-height: 300px" data-line-numbers="22-29">details {
+	background-color: var(--main-bg-color);
+}
+						</code>
+					</pre>
+				</section>
+				<section>
+					<h3>CSS - Vars - Vererbung</h3>
+					<p>Vorsicht: CSS-Variablen speichern keinen Wert<span class="fragment">, er wird im Moment der Nutzung berechnet!</span></p>
+					<p class="fragment">Variablen-Werte können umdefiniert werden</p>
+				</section>
+				<section>
+					<h3>CSS - Vars - Vererbung</h3>
+					<iframe class="code-example min-height-200"
+						data-src="./code-examples/12_variablen/variablen.html"></iframe>
+					<pre class="language-css">
+							<code class="hljs" style="max-height: 300px" data-code="./code-examples/12_variablen/variablen.css"></code>
+						</pre>
+				</section>
+				<section>
+					<h3>CSS - Vars - Vererbung</h3>
+					<div class="two-columns-half-half">
+						<div>
+							<pre class="language-html">
+								<code class="hljs">&lt;div class="one"&gt;
+	&lt;p&gt;One&lt;/p&gt;
+	&lt;div class="two"&gt;
+		&lt;p&gt;Two&lt;/p&gt;
+		&lt;div class="three"&gt;
+			&lt;p&gt;Three&lt;/p&gt;
+		&lt;/div&gt;
+		&lt;div class="four"&gt;
+			&lt;p&gt;Four&lt;/p&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/div&gt;</code>
+							</pre>
+						</div>
+						<div>
+							<pre class="language-css">
+								<code class="hljs" data-code="./code-examples/12_variablen/variablen.css" data-line-numbers="|1-3|5-7|9-11|"></code>
+							</pre>
+						</div>
+					</div>
+					<ol>
+						<li>ungültiger Wert</li>
+						<li>cornflowerblue</li>
+						<li>aquamarine</li>
+						<li>vom Elternelement geerbt</li>
+					</ol>
+				</section>
+				<section>
+					<h3>CSS - Vars - Fallback</h3>
+					<p>var() bietet die Möglichkeit einen Fallback anzugeben</p>
+					<pre class="language-css">
+						<code class="hljs" style="max-height: 300px" data-line-numbers="22-29">details {
+	/* empty value as fallback */
+	color: var(--custom-prop,);
+	/* initial value of the property as fallback */
+	color: var(--custom-prop, initial);
+	/* with fallback */
+	color: var(--custom-prop, #FF0000);
+}
+						</code>
+					</pre>
+					<p><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/var">MDN: var</a></p>
+				</section>
+			</section>
+			<section>
+				<section>
+					<h3>Praxis - Aufgabe 7 - Styling</h3>
+					<p>Gegeben: <a
+							href="https://gitlab.com/chr1shaefn3r-dhbw/vorlesung-webeng1/-/raw/master/TINF23B2/css/aufgaben/07-styling/aufgabe7.html?inline=false">aufgabe7.html</a>
+					</p>
+					<ul class="smaller-font">
+						<li>Färbt den Hintergrund alle geraden Tabellenzeilen grau</li>
+						<li>Gebt allen Tabellenzeilen mit nur einer Zelle einen roten Rahmen</li>
+						<li>Gebt der Tabelle ein Gitternetz in blau</li>
+						<li>Gebt der ersten Überschrift einen serifenlosen Zeichensatz in der Größe 16pt und Fettdruck
+						</li>
+						<li>Absatz 1 soll linksbündig angeordnet werden, der Absatz 4 rechtsbündig</li>
+						<li>Zweite Spalte der Tabelle soll zentriert erscheinen</li>
+					</ul>
+				</section>
+				<section>
+					<h3>Praxis - Aufgabe 8 - Box-Modell</h3>
+					<p>Nach dem CSS-Box-Modell, welche "bottom" und "right" Werte haben das rote, grüne, blaue und
+						orangene Rechteck?</p>
+					<p class="smaller-font">Gegeben sind folgende zwei Dateien aus dem Folien-Repo:
+					</p>
+					<ul>
+						<li><a
+								href="https://gitlab.com/chr1shaefn3r-dhbw/vorlesung-webeng1/-/blob/master/TINF22B2/css/aufgaben/08-box-modell/aufgabe8.html">aufgabe8.html</a>
+						</li>
+						<li><a
+								href="https://gitlab.com/chr1shaefn3r-dhbw/vorlesung-webeng1/-/raw/master/added_2021/css/aufgaben/08-box-modell/aufgabe8.css">aufgabe8.css</a>
+						</li>
+					</ul>
+				</section>
+				<section>
+					<h3>Praxis - Aufgabe 9 - Styling</h3>
+					<div class="two-columns-half-half">
+						<pre>
+&lt;<span class="hljs-name">body</span>&gt;
+  &lt;div class="box"&gt;
+    &lt;<span class="hljs-name">h1</span>&gt;Meine Überschrift&lt;/<span class="hljs-name">h1</span>&gt;
+    &lt;p&gt;&lt;span
+      class="firstletter"&gt;I
+      &lt;/span&gt;ste quidem veteres
+      inter ponetur honeste,
+      qui vel mense brevi vel
+      toto est iunior anno.
+    &lt;/p&gt;
+    &lt;p&gt;Utor permisso, caudaeque
+      pilos ut equinae paulatim
+      vello unum, demo etiam
+      unum, dum cadat elusus
+      ratione ruentis acervi,
+      qui redit in fastos
+      et annis miraturque.
+    &lt;/p&gt;
+</pre>
+						<pre>
+    &lt;table&gt;
+      &lt;tr class="odd row"&gt;
+        &lt;td&gt;Jakobus&lt;/td&gt;
+        &lt;td&gt;Müller&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr class="even odd"&gt;
+        &lt;td&gt;Petra&lt;/td&gt;
+        &lt;td&gt;Maier&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr class="row odd"&gt;
+        &lt;td colspan="2"&gt;
+        Georg IV&lt;/td&gt;
+      &lt;/tr&gt;
+    &lt;/table&gt;
+    &lt;div class="important"&gt;
+    Wichtig!!&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/<span class="hljs-name">body</span>&gt;</pre>
+					</div>
+				</section>
+				<section>
+					<h3>Praxis - Aufgabe 9 - Styling</h3>
+					<img src="./aufgaben/09-styling/css-praxis-aufgabe9.jpg" alt="Praxis CSS Aufgabe 9">
+				</section>
+			</section>
+			<section>
+				<section>
+					<h3>Lösung - Aufgabe 8 - Box-Modell</h3>
+					<ul>
+						<li>rot: bottom=262,right:262</li>
+						<li>grün: bottom=123,right:223</li>
+						<li>blau: bottom=215,right:223</li>
+						<li>orange: bottom=167,right:282</li>
+					</ul>
+				</section>
+				<section>
+					<h3>Lösung - Aufgabe 9 - Styling</h3>
+					<p>
+						Code:<br><a
+							href="https://gitlab.com/chr1shaefn3r-dhbw/vorlesung-webeng1/-/blob/master/TINF23B2/css/aufgaben/09-styling/loesung.html">gitlab.com/.../TINF23B2/css/aufgaben/<br>09-styling/loesung.html</a>
+					</p>
+					<p>
+						Deployed:<br><a
+							href="https://chr1shaefn3r-dhbw.gitlab.io/vorlesung-webeng1/TINF23B2/css/aufgaben/09-styling/loesung.html">gitlab.io/.../TINF23B2/css/aufgaben/<br>09-styling/loesung.html</a>
+					</p>
+				</section>
+			</section>
+			<section>
+				<section>
+					<h3>CSS - Prioritäten</h3>
+					<p>Browser berechnet für jede Eigenschaft und jedes Element die Menge der anzuwendenden Regeln</p>
+					<ul>
+						<li class="fragment">Erste Priorisierung nach Ursprung und Wichtigkeit
+							<ul>
+								<li>Wichtige Regeln aus Benutzer-Stylesheet</li>
+								<li>Wichtige Regeln aus Autoren-Stylesheet</li>
+								<li>Regeln aus Benutzer-Stylesheet</li>
+								<li>Regeln aus Autoren-Stylesheet</li>
+								<li>Regeln aus Browser-Stylesheet</li>
+							</ul>
+						</li>
+					</ul>
+				</section>
+				<section>
+					<h3>CSS - Prioritäten</h3>
+					<ul>
+						<li>Zweite Priorisierung nach Spezifität
+							<ul class="fragment" data-fragment-index="1">
+								<li class="fragment" data-fragment-index="4">Inline-Style</li>
+								<li class="fragment" data-fragment-index="3">ID-Selektor (#example)</li>
+								<li class="fragment" data-fragment-index="2">Class-Selektor (.example),
+									Attribut-Selektor ([type="radio"]), pseudo-classes
+									(:hover)</li>
+								<li class="fragment" data-fragment-index="1">Type-Selektor (h1), pseudo-elements
+									(::marker)</li>
+							</ul>
+						</li>
+					</ul>
+					<p class="fragment" data-fragment-index="4">Siehe auch: <a
+							href="https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity">MDN - CSS
+							Specificity</a>, und <a href="https://specifishity.com/">specifishity.com</a></p>
+				</section>
+				<section>
+					<h3>CSS - Wichtige Regel</h3>
+					<p>CSS-Regeln können mittels "!important" als wichtig markiert werden</p>
+					<p class="fragment"><span class="hljs-selector-tag">Selektor</span> { <span
+							class="hljs-attribute">Eigenschaft</span>: <span class="hljs-value">Wert</span> <span
+							class="hljs-meta">!important</span>; }</p>
+					<p class="fragment">Wichtig: Sollte in der Anwendungsentwicklung die Ausnahme bleiben</p>
+					<p class="fragment">Wichtig: Ist in der Framework/Bibliothek/Plugin Entwicklung
+						<strong>verboten</strong>
+					</p>
+				</section>
+				<section>
+					<h3>CSS - Prioritäten - Best Practices</h3>
+					<p>Vermeidet die Situation, in denen mehr als eine Regel für ein Element gilt!<br>Ausnahme:
+						Überschreiben von Regeln der Eltern</p>
+					<p class="fragment">Verwendet eine einheitliche Vorgehensweise
+					<ul class="fragment">
+						<li>Identifikation über Elementnamen oder(!)</li>
+						<li>Identifikation über Klassen oder</li>
+						<li>...</li>
+					</ul>
+					</p>
+				</section>
+			</section>
+			<section>
+				<section>
+					<h3>CSS - Media-Queries</h3>
+					<p>CSS-Regeln auf spezifischen Medientyp einschränken</p>
+					<p><span class="hljs-keyword">@media</span> &lt;medium&gt; { ... }</p>
+					<ul>
+						<li class="fragment">Media Types: all, print, screen</li>
+						<li class="fragment">Media Features: width, orientation, prefers-color-scheme, color and many
+							more
+							<ul>
+								<li>Ranges mit "min-" und "max-" prefix</li>
+							</ul>
+						</li>
+						<li class="fragment">Komplexe Queries
+							<ul>
+								<li>Logische Verkettung, Und: "and", Oder: ","</li>
+								<li>Negierung, "not"</li>
+							</ul>
+						</li>
+					</ul>
+					<p><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media">MDN: @media</a></p>
+				</section>
+				<section>
+					<h3>CSS - Media-Queries</h3>
+					<p>Beispiel "Druck"</p>
+					<p>
+					<pre>
+<span class="hljs-keyword">@media</span> print {
+  <span class="hljs-selector-tag">nav</span> {
+    <span class="hljs-attribute">display</span>: none;
+  }
+}</pre>
+					</p>
+					<p class="fragment" data-fragment-index="1">Beispiel "Großes Displays"<br>(Inhalt nicht auf der
+						ganzen Breite)</p>
+					<p>
+					<pre class="fragment" data-fragment-index="1">
+<span class="hljs-keyword">@media</span> screen and (min-width: 1000px) {
+  <span class="hljs-selector-id">#content</span> {
+    <span class="hljs-attribute">max-width</span>: 80%;
+    <span class="hljs-attribute">margin</span>: auto;
+  }
+}</pre>
+					</p>
+				</section>
+			</section>
+			<section>
+				<section>
+					<h3>CSS - Flexbox</h3>
+					<p>Ziel: einfachere und einheitlichere Handhabung als float/clear/margin/padding</p>
+					<ol>
+						<li class="fragment">Flex-Container
+							<ul>
+								<li>Enthaltene Flex-Items, hierin wird angeordnet</li>
+								<li><span class="hljs-attribute">display</span>: <span class="hljs-value">flex</span>;
+								</li>
+							</ul>
+						</li>
+						<li class="fragment">Flex-Item
+							<ul>
+								<li>Alle direkten Kinder werden angeordnet</li>
+								<li>Keine automatischen Zeilenumbrüche</li>
+							</ul>
+						</li>
+					</ol>
+				</section>
+				<section>
+					<h3>CSS - Flexbox</h3>
+					<img src="./images/flex_terms.png" alt="Flexbox terms">
+				</section>
+				<section>
+					<h3>CSS - Flexbox</h3>
+					<iframe class="code-example min-height-200"
+						data-src="./code-examples/10_flexbox/flexbox.html"></iframe>
+					<pre class="language-html">
+							<code class="hljs" style="max-height: 300px" data-code="./code-examples/10_flexbox/flexbox.html" data-line-numbers="19-27|9-14"></code>
+						</pre>
+				</section>
+				<section>
+					<h3>CSS - flex-flow</h3>
+					<ul>
+						<li>Fließrichtung ändern
+							<ul>
+								<li><span class="hljs-attribute">flex-flow</span>: <span
+										class="hljs-value">&lt;direction&gt; &lt;wrap&gt;</span>;</li>
+								<li class="fragment"><span class="hljs-attribute">flex-flow</span>: <span
+										class="hljs-value">row
+										nowrap</span>;</li>
+								<li class="fragment"><span class="hljs-attribute">flex-flow</span>: <span
+										class="hljs-value">row-reverse wrap</span>;</li>
+								<li class="fragment"><span class="hljs-attribute">flex-flow</span>: <span
+										class="hljs-value">row
+										wrap</span>;</li>
+							</ul>
+						</li>
+					</ul>
+					<iframe class="code-example full-width min-height-200"
+						data-src="./code-examples/10_flexbox/flex-flow.html"></iframe>
+				</section>
+				<section>
+					<h3>CSS - flex-direction</h3>
+					<ul>
+						<li>Fließrichtung ändern
+							<ul>
+								<li><span class="hljs-attribute">flex-direction</span>: <span
+										class="hljs-value">column</span>;</li>
+								<li><span class="hljs-attribute">flex-direction</span>: <span
+										class="hljs-value">column-reverse</span>;</li>
+							</ul>
+						</li>
+					</ul>
+					<iframe class="code-example full-width"
+						data-src="./code-examples/10_flexbox/flex-direction.html"></iframe>
+					<ul class="fragment">
+						<li>Alternativen
+							<ul>
+								<li>flex-direction: row/row-reverse/column/column-reverse</li>
+								<li>flex-wrap: nowrap/wrap/wrap-reverse</li>
+							</ul>
+						</li>
+					</ul>
+				</section>
+				<section>
+					<h3>CSS - justify-content</h3>
+					<ul>
+						<li>Horizontale Ausrichtung aller Items
+							<ul>
+								<li><span class="hljs-attribute">justify-content</span>: <span
+										class="hljs-value">flex-start</span>; (linksbündig)</li>
+								<li class="fragment"><span class="hljs-attribute">justify-content</span>: <span
+										class="hljs-value">flex-end</span>; (rechtsbündig)</li>
+								<li class="fragment"><span class="hljs-attribute">justify-content</span>: <span
+										class="hljs-value">center</span>; (zentriert)</li>
+								<li class="fragment"><span class="hljs-attribute">justify-content</span>: <span
+										class="hljs-value">space-between</span>; (links bis rechts)</li>
+								<li class="fragment"><span class="hljs-attribute">justify-content</span>: <span
+										class="hljs-value">space-around</span>;<br>(gleichmäßig verteilt zentriert)
+								</li>
+							</ul>
+						</li>
+					</ul>
+					<iframe class="code-example full-width min-height-200"
+						data-src="./code-examples/10_flexbox/justify-content.html"></iframe>
+				</section>
+				<section>
+					<h3>CSS - justify-content video</h3>
+					<video controls
+						src="https://packaged-media.redd.it/hd8fh9ke2g5b1/pb/m2-res_480p.mp4?m=DASHPlaylist.mpd&v=1&e=1707325200&s=16a4e1e728042a052be89f73d5fe21b989c7d471#t=0"></video>
+					<p>Source: <a
+							href="https://www.reddit.com/r/webdev/comments/1473lfw/css_flex_for_visual_speed_learners/">Reddit:
+							r/webdev<br>"CSS flex for visual speed learners"</a></p>
+				</section>
+				<section>
+					<h3>CSS - align-items</h3>
+					<ul>
+						<li>Vertikale Ausrichtung aller Items
+							<ul>
+								<li><span class="hljs-attribute">align-items</span>: <span
+										class="hljs-value">flex-start</span>; (oben)</li>
+								<li class="fragment"><span class="hljs-attribute">align-items</span>: <span
+										class="hljs-value">flex-end</span>; (unten)</li>
+								<li class="fragment"><span class="hljs-attribute">align-items</span>: <span
+										class="hljs-value">center</span>; (zentriert)</li>
+								<li class="fragment"><span class="hljs-attribute">align-items</span>: <span
+										class="hljs-value">baseline</span>; (Schrift Basislinie)</li>
+							</ul>
+						</li>
+					</ul>
+					<iframe class="code-example full-width min-height-300"
+						data-src="./code-examples/10_flexbox/align-items.html"></iframe>
+				</section>
+				<section>
+					<h3>CSS - gaps</h3>
+					<ul>
+						<li>Innere Abstände
+							<ul>
+								<li><span class="hljs-attribute">row-gap</span>: <span class="hljs-value">10px</span>;
+									(Zeilenabstand)</li>
+								<li><span class="hljs-attribute">column-gap</span>: <span
+										class="hljs-value">30px</span>; (Spaltenabstand)</li>
+								<li class="fragment"><span class="hljs-attribute">gap</span>: <span
+										class="hljs-value">10px 30px</span>;
+									(Kurzform)</li>
+								<li class="fragment"><span class="hljs-attribute">gap</span>: <span
+										class="hljs-value">20px</span>;
+									(Kurzform, gleicher Abstand)</li>
+							</ul>
+						</li>
+					</ul>
+					<iframe class="code-example full-width min-height-200"
+						data-src="./code-examples/10_flexbox/gap.html"></iframe>
+				</section>
+				<section>
+					<h3>CSS - Flexbox</h3>
+					<ul>
+						<li>Reihenfolge bestimmen
+							<ul>
+								<li><span class="hljs-attribute">order</span>: <span class="hljs-value">&lt;ganze
+										Zahl&gt;</span>; (Bei jedem Item angeben!)</li>
+								<li><span class="hljs-attribute">order</span>: <span class="hljs-value">-1</span>; (Item
+									"nach Vorne" holen)</li>
+							</ul>
+						</li>
+						<li class="fragment">Größenverhalten eines Items
+							<ul>
+								<li><span class="hljs-attribute">flex-start</span>: <span class="hljs-value">Feste
+										Längenangabe, %-Anteil</span>;<br>Basis-Breite eines Elements</li>
+								<li class="fragment"><span class="hljs-attribute">flex-grow</span>: <span
+										class="hljs-value">&lt;Zahl&gt;</span>; (Wachstumsfaktor)</li>
+								<li class="fragment"><span class="hljs-attribute">flex-shrink</span>: <span
+										class="hljs-value">&lt;Zahl&gt;</span>; (Schrumpffaktor)</li>
+								<li class="fragment"><span class="hljs-attribute">flex</span>: <span
+										class="hljs-value">&lt;grow&gt;
+										&lt;shrink&gt; &lt;start&gt;</span>; (Kurzform)</li>
+							</ul>
+						</li>
+					</ul>
+				</section>
+				<section>
+					<h3>CSS - Flexbox - Spiel</h3>
+					<p>Spielerisch lernt es sich manchmal am einfachsten: <a href="https://flexboxfroggy.com/">Flexbox
+							Froggy</a></p>
+					<p>Frösche müssen via CSS-Flexbox auf ihr Seerosenblatt gesetzt werden, 24 Level</p>
+				</section>
+			</section>
+			<section>
+				<section>
+					<h3>CSS - Grid</h3>
+					<p>Ziel: Anordnung in Matrix-Raster</p>
+					<ol>
+						<li class="fragment">Grid-Container
+							<ul>
+								<li>hierin wird angeordnet</li>
+								<li><span class="hljs-attribute">display</span>: <span class="hljs-value">grid</span>;
+								</li>
+							</ul>
+						</li>
+						<li class="fragment">Grid-Item
+							<ul>
+								<li>Alle direkten Kinder werden automatisch zu grid-items und angeordnet</li>
+							</ul>
+						</li>
+					</ol>
+				</section>
+				<section>
+					<h3>CSS - Grid</h3>
+					<ul>
+						<li>Spalten festlegen
+							<ul>
+								<li><span class="hljs-attribute">grid-template-columns</span>: <span
+										class="hljs-value">&lt;Zahl/auto&gt;*</span>;<br>Anzahl Parameter bestimmt
+									Anzahl Spalten</li>
+								<li class="fragment" data-fragment-index="1"><span class="hljs-value">auto</span>:
+									Browser bestimmt Spaltenbreite</li>
+								<li class="fragment" data-fragment-index="2"><span class="hljs-value">Zahl</span>:
+									Längenangabe mit fester/relativer Breite
+									<ul>
+										<li class="fragment" data-fragment-index="2">Neue Einheit fr (fraction/Anteile)
+										</li>
+										<li class="fragment" data-fragment-index="3">Bestimmt nicht die Breite des
+											Inhalts!</li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+					</ul>
+					<iframe class="code-example full-width min-height-200"
+						data-src="./code-examples/11_grid/two-template-columns.html"></iframe>
+				</section>
+				<section>
+					<h3>CSS - Grid</h3>
+					<ul>
+						<li>Zeilen festlegen
+							<ul>
+								<li><span class="hljs-attribute">grid-template-rows</span>: <span
+										class="hljs-value">&lt;Zahl/auto&gt;*</span>;<br>Anzahl Parameter bestimmt
+									Anzahl Zeilen</li>
+								<li class="fragment" data-fragment-index="1"><span class="hljs-value">auto</span>:
+									Browser bestimmt Zeilenhöhe</li>
+								<li class="fragment" data-fragment-index="1"><span class="hljs-value">Zahl</span>:
+									Längenangabe mit fester/relativer Breite
+									<ul>
+										<li class="fragment" data-fragment-index="1">Neue Einheit fr (fraction/Anteile)
+										</li>
+										<li class="fragment" data-fragment-index="1">Bestimmt nicht die Höhe des
+											Inhalts!</li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+					</ul>
+					<iframe class="code-example full-width min-height-200"
+						data-src="./code-examples/11_grid/three-template-rows.html"></iframe>
+				</section>
+				<section>
+					<h3>CSS - Grid</h3>
+					<ul>
+						<li>Wiederholungen mit repeat
+							<ul>
+								<li><span class="hljs-value">repeat(&lt;Anzahl/auto-fill&gt;,
+										&lt;Längenangabe&gt;*)</span></li>
+								<li class="fragment"><span class="hljs-attribute">grid-template-columns</span>: <span
+										class="hljs-value">1fr repeat(5, 3fr) 1fr</span>;</li>
+								<li class="fragment"><span class="hljs-attribute">grid-template-rows</span>: <span
+										class="hljs-value">repeat(5, 3fr 2fr)</span>;</li>
+								<li class="fragment"><span class="hljs-value">auto-fill</span> (so viele Spalten, wie
+									möglich)</li>
+								<li class="fragment"><span class="hljs-value">minmax(&lt;min&gt;, &lt;max&gt;)</span>
+									(variable Längenangabe)</li>
+							</ul>
+						</li>
+					</ul>
+					<iframe class="code-example full-width min-height-200"
+						data-src="./code-examples/11_grid/two-template-columns-repeat.html"></iframe>
+				</section>
+				<section>
+					<h3>CSS - Grid</h3>
+					<ul>
+						<li>Items über mehrere Rasterelemente
+							<ul>
+								<li class="fragment"><span class="hljs-attribute">grid-(row|column)-start</span>: <span
+										class="hljs-value">&lt;Zahl&gt;</span>;</li>
+								<li class="fragment"><span class="hljs-attribute">grid-(row|column)-end</span>: <span
+										class="hljs-value">&lt;Zahl&gt;</span>;</li>
+								<li class="fragment"><span class="hljs-attribute">grid-(row|column)</span>: <span
+										class="hljs-value">&lt;Start&gt; / &lt;End&gt;</span>;</li>
+								<li class="fragment"><span class="hljs-attribute">grid-area</span>: <span
+										class="hljs-value">&lt;Row-Start&gt;/&lt;Column-Start&gt;/&lt;Row-End&gt;/&lt;Column-End&gt;</span>;
+								</li>
+							</ul>
+						</li>
+						<li class="fragment">Werte
+							<ul>
+								<li class="smaller-font">Positive Werte: gezählt vom Anfang beginnend mit 1</li>
+								<li class="smaller-font">Negative Werte: gezählt vom Ende beginnend mit -1</li>
+								<li class="fragment">Über ganze Zeile: <span class="hljs-attribute">grid-column</span>:
+									<span class="hljs-value">1/-1</span>;
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</section>
+				<section>
+					<h3>CSS - Grid</h3>
+					<ul>
+						<li>Items über mehrere Rasterelemente</li>
+					</ul>
+					<iframe class="code-example full-width"
+						data-src="./code-examples/11_grid/grid-row-column.html"></iframe>
+					<pre class="language-html">
+						<code class="hljs" style="max-height: 300px" data-code="./code-examples/11_grid/grid-row-column.html" data-line-numbers="22-29"></code>
+					</pre>
+				</section>
+				<section>
+					<h3>CSS - Grid-Ausrichtung</h3>
+					<ul>
+						<li>Ausrichten der Items innerhalb des Containers (Analog zu flexbox)
+							<ul>
+								<li class="fragment">Für alle Items im Container<br><span
+										class="hljs-attribute">align-items</span>, <span
+										class="hljs-attribute">justify-items</span></li>
+								<li class="fragment">Für ein einzelnes Item im Container<br><span
+										class="hljs-attribute">align-self</span>, <span
+										class="hljs-attribute">justify-self</span></li>
+							</ul>
+						</li>
+						<li class="fragment">Ausrichten aller Items im Container
+							<ul>
+								<li><span class="hljs-attribute">align-content</span>: <span
+										class="hljs-value">&lt;start/end/center&gt;</span>; (vertikal)</li>
+								<li><span class="hljs-attribute">justify-content</span>: <span
+										class="hljs-value">&lt;start/end/center&gt;</span>; (horizontal)</li>
+							</ul>
+						</li>
+					</ul>
+				</section>
+				<section>
+					<h3>CSS - Grid - Weiteres</h3>
+					<ul>
+						<li>Viele weitere Möglichkeiten
+							<ul>
+								<li class="fragment" data-fragment-index="1">Benamste template areas<br><span
+										class="hljs-attribute">grid-template-areas</span>, <span
+										class="hljs-attribute">grid-area</span> (<a
+										href="https://developer.mozilla.org/en-US/docs/Web/CSS/grid-template-areas">MDN</a>)
+								</li>
+								<li class="fragment" data-fragment-index="2">Beeinflussung des
+									Layout-Algorithmus<br><span class="hljs-attribute">grid-auto-flow</span> (<a
+										href="https://developer.mozilla.org/en-US/docs/Web/CSS/grid-auto-flow">MDN</a>)
+								</li>
+								<li class="fragment" data-fragment-index="2">...</li>
+							</ul>
+						</li>
+					</ul>
+				</section>
+				<section>
+					<h3>CSS - Grid vs Flexbox</h3>
+					<p>Was ist der Unterschied?</p>
+					<ul>
+						<li class="fragment">Grid spezifiziert die Größen-Eigenschaften auf dem Container, Flexbox auf
+							den einzelnen Elementen</li>
+						<li class="fragment">Flexbox ist ein eindimensionales Layout<br>Grid ist ein zweidimensionales
+							Layout</li>
+					</ul>
+					<p class="fragment">Wann Grid-Layout und wann Flexbox verwenden?</p>
+					<ul>
+						<li class="fragment">Grobe Richtlinie: Seitenlayouts mit Grid, Komponentenlayouts mit Flexbox
+						</li>
+					</ul>
+				</section>
+			</section>
+			<section>
+				<section>
+					<h3>CSS - Neu in 2023</h3>
+					<p><span class="hljs-attribute">text-wrap</span>: <span class="hljs-value">balance</span></p>
+					<img class="fragment" data-fragment-index="1" src="./images/text-wrap-balance.png"
+						alt="Headline with and without text-wrap balance">
+					<p class="fragment" data-fragment-index="1">Source: <a
+							href="https://developer.chrome.com/docs/css-ui/css-text-wrap-balance">CSS text-wrap:
+							balance</a></p>
+				</section>
+				<section>
+					<h3>text-wrap: balance</h3>
+					<p>Ziele:</p>
+					<ul>
+						<li>Überschriften sind leichter zu lesen</li>
+						<li>Kein einsahmes Wort auf der letzten Zeile<br>
+							Vergleichbar mit <a
+								href="https://de.wikipedia.org/wiki/Hurenkind_und_Schusterjunge">Hurenkind und
+								Schusterjunge</a></li>
+					</ul>
+
+					<pre class="language-css">
+						<code class="hljs" style="max-height: 300px" data-line-numbers="22-29">h1, h2, h3, h4, h5, h6 {
+	text-wrap: balance;
+}
+						</code>
+					</pre>
+				</section>
+			</section>
+			<section>
+				<section>
+					<h3>Praxis - Aufgabe 10 - Styling</h3>
+					<p>Aus dem Folien-Repo folgende Dateien herunterladen:
+					<ul>
+						<li><a
+								href="https://gitlab.com/chr1shaefn3r-dhbw/vorlesung-webeng1/-/raw/master/TINF22B2/css/aufgaben/10-styling/aufgabe10.html?inline=false">aufgabe10.html</a>
+						</li>
+						<li><a
+								href="https://gitlab.com/chr1shaefn3r-dhbw/vorlesung-webeng1/-/raw/master/TINF22B2/css/aufgaben/10-styling/colors.css?inline=false">colors.css</a>
+						</li>
+					</ul>
+					</p>
+					<p>Erstellt eine "layout.css" sodass es je nach Breite des Browsers wie folgt aussieht.</p>
+				</section>
+				<section>
+					<h3>CSS - Aufgabe 10 - Breit</h3>
+					<p>Erstellt eine "layout.css" sodass es je nach Breite des Browsers wie folgt aussieht.</p>
+					<img src="./aufgaben/10-styling/css-praxis-aufgabe10_breit.jpg" alt="Praxis CSS Aufgabe 10 Breit">
+				</section>
+				<section>
+					<h3>CSS - Aufgabe 10 - Schmal</h3>
+					<img src="./aufgaben/10-styling/css-praxis-aufgabe10_schmal.jpg" style="max-height: 500px"
+						alt="Praxis CSS Aufgabe 10 Schmal">
+				</section>
+			</section>
+			<section>
+				<h3>Lösung - Aufgabe 10 - Styling</h3>
+				<p>
+					Code:<br><a
+						href="https://gitlab.com/chr1shaefn3r-dhbw/vorlesung-webeng1/-/blob/master/TINF23B2/css/aufgaben/10-styling/layout-loesung.css">gitlab.com/.../TINF23B2/css/aufgaben/<br>10-styling/layout-loesung.css</a>
+				</p>
+				<p>
+					Deployed:<br><a
+						href="https://chr1shaefn3r-dhbw.gitlab.io/vorlesung-webeng1/TINF23B2/css/aufgaben/10-styling/aufgabe10.html">gitlab.io/.../TINF23B2/css/aufgaben/<br>10-styling/aufgabe10.html</a>
+				</p>
+			</section>
+			<!-- Ende CSS-Day2 -->
 			</section>
 
 			<script>

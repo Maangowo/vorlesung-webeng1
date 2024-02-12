@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>
+        CSS - grid-template-columns
+    </title>
+    <style>
+        .grid {
+            display: grid;
+            border: 2px solid black;
+            margin-bottom: 10px;
+        }
+
+        div div {
+            border: 1px solid red;
+        }
+    </style>
+</head>
+
+<body>
+    <b>grid-template-columns: 1fr 1fr 1fr; grid-template-rows: 1fr 1fr 1fr 1fr;</b>
+    <div class="grid" style="grid-template-columns: 1fr 1fr 1fr; grid-template-rows: 1fr 1fr 1fr 1fr;">
+        <div style="grid-column: 1/-1">Block 1</div>
+        <div style="grid-column: 2;grid-row: 2/-1">Block 2</div>
+        <div style="grid-column: 1;grid-row: 2/-2">Block 3</div>
+        <div>Block 4</div>
+        <div style="grid-column: 3">Block 5</div>
+        <div>Block 6</div>
+    </div>
+</body>
+
+</html>

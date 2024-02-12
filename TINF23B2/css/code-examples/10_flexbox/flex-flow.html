@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>
+        CSS - flex-flow
+    </title>
+    <style>
+        .flexbox {
+            display: flex;
+            border: 2px solid black;
+            margin-bottom: 10px;
+        }
+        div div {
+            border: 1px solid red;
+        }
+    </style>
+</head>
+
+<body>
+    <b>flex-flow: row nowrap;</b>
+    <div class="flexbox" style="flex-flow: reverse nowrap;">
+        <div>Block 1</div>
+        <div>Block 2</div>
+        <div>Block 3</div>
+        <div>Block 4</div>
+        <div>Block 5</div>
+        <div>Block 6</div>
+    </div>
+    <div class="flexbox" style="flex-flow: reverse nowrap; width: 100px;">
+        <div>Block 1</div>
+        <div>Block 2</div>
+        <div>Block 3</div>
+        <div>Block 4</div>
+        <div>Block 5</div>
+        <div>Block 6</div>
+    </div>
+    <b>flex-flow: row-reverse wrap;</b>
+    <div class="flexbox" style="flex-flow: row-reverse wrap;">
+        <div>Block 1</div>
+        <div>Block 2</div>
+        <div>Block 3</div>
+        <div>Block 4</div>
+        <div>Block 5</div>
+        <div>Block 6</div>
+    </div>
+    <b>flex-flow: row wrap;</b>
+    <div class="flexbox" style="flex-flow: row wrap; width: 225px;">
+        <div>Block 1</div>
+        <div>Block 2</div>
+        <div>Block 3</div>
+        <div>Block 4</div>
+        <div>Block 5</div>
+        <div>Block 6</div>
+    </div>
+</body>
+
+</html>

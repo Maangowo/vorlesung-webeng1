@@ -1,0 +1,53 @@
+h1 {
+    color          : blueviolet;
+    font-style     : italic;
+    text-decoration: underline;
+}
+
+.firstletter {
+    color       : orange;
+    margin-right: 5px;
+    font-size   : 26pt;
+    float       : left;
+}
+
+p,
+table {
+    color: olive;
+}
+
+table {
+    border-color: black;
+    border-style: double;
+    border-width: 6px;
+    border-collapse: collapse;
+}
+
+tr.row {
+    border-bottom-color: red;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+}
+
+tr td:first-child {
+    border-right-color: red;
+    border-right-width: 1px;
+    border-right-style: solid;
+}
+
+td {
+    padding: 5px;
+}
+
+.important {
+    position        : absolute;
+    top             : 100px;
+    left            : 100px;
+    border          : 4px solid red;
+    background-color: violet;
+    font-weight     : bold;
+    text-align      : center;
+    line-height     : 60px;
+    height          : 60px;
+    width           : 100px;
+}

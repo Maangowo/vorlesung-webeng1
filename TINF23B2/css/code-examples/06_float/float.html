@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        CSS - Border Collapse
+    </title>
+    <style>
+        body {
+            display: grid;
+            grid: auto-flow / 1fr 1fr 1fr;
+            grid-auto-flow: column
+        }
+        div > div {
+            padding: 8px;
+            border: 1px solid red;
+            float: none;
+        }
+        .float-left > div {
+            float: left;
+        }
+        .float-right > div {
+            float: right;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <h1>float: none</h1>
+        <div>Block 1</div>
+        <div>Block 2</div>
+        <div>Block 3</div>
+        <div>Block 4</div>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisis rutrum turpis at venenatis. Sed
+            vestibulum posuere faucibus. Cras in mollis neque. Vestibulum ante ipsum primis in faucibus orci luctus et
+            ultrices posuere cubilia curae; Donec posuere erat sit amet leo euismod consequat. Vestibulum purus nulla,
+            lobortis a ligula vehicula, elementum consequat est. Donec et arcu bibendum, maximus lacus eget, maximus
+            tortor.</p>
+    </div>
+    <div class="float-left">
+        <h1>float: left</h1>
+        <div>Block 1</div>
+        <div>Block 2</div>
+        <div>Block 3</div>
+        <div>Block 4</div>
+        <div>Block 5</div>
+        <div>Block 6</div>
+        <div>Block 7</div>
+        <div>Block 8</div>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisis rutrum turpis at venenatis. Sed
+            vestibulum posuere faucibus. Cras in mollis neque. Vestibulum ante ipsum primis in faucibus orci luctus et
+            ultrices posuere cubilia curae; Donec posuere erat sit amet leo euismod consequat. Vestibulum purus nulla,
+            lobortis a ligula vehicula, elementum consequat est. Donec et arcu bibendum, maximus lacus eget, maximus
+            tortor.</p>
+    </div>
+    <div class="float-right">
+        <h1>float: right</h1>
+        <div>Block 1</div>
+        <div>Block 2</div>
+        <div>Block 3</div>
+        <div>Block 4</div>
+        <div>Block 5</div>
+        <div>Block 6</div>
+        <div>Block 7</div>
+        <div>Block 8</div>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisis rutrum turpis at venenatis. Sed
+            vestibulum posuere faucibus. Cras in mollis neque. Vestibulum ante ipsum primis in faucibus orci luctus et
+            ultrices posuere cubilia curae; Donec posuere erat sit amet leo euismod consequat. Vestibulum purus nulla,
+            lobortis a ligula vehicula, elementum consequat est. Donec et arcu bibendum, maximus lacus eget, maximus
+            tortor.</p>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        CSS - Border Collapse
+    </title>
+    <style>
+        #p1 {
+            margin-left: 0px;
+            border-left-style: solid;
+            border-left-width: 0px;
+            padding-left: 0px;
+            background-color: silver;
+        }
+        #p2 {
+            margin-left: 0px;
+            border-left-style: solid;
+            border-left-width: 0px;
+            padding-left: 10px;
+            background-color: silver;
+        }
+        #p3 {
+            margin-left: 0px;
+            border-left-style: solid;
+            border-left-width: 10px;
+            padding-left: 0px;
+            background-color: silver;
+        }
+        #p4 {
+            margin-left: 10px;
+            border-left-style: solid;
+            border-left-width: 0px;
+            padding-left: 0px;
+            background-color: silver;
+        }
+        #p5 {
+            margin-left: 10px;
+            border-left-style: solid;
+            border-left-width: 10px;
+            padding-left: 10px;
+            background-color: silver;
+        }
+        #p6 {
+            margin: 10px;
+            border-style: solid;
+            border-width: 10px;
+            padding: 10px;
+            background-color: silver;
+        }
+    </style>
+</head>
+
+<body>
+    <p id="p1">Absatz 1</p>
+    <p id="p2">Absatz 2 (padding-left: 10px)</p>
+    <p id="p3">Absatz 3 (border-left-width: 10px)</p>
+    <p id="p4">Absatz 4 (margin-left: 10px)</p>
+    <p id="p5">Absatz 5 (2+3+4)</p>
+    <p id="p6">Absatz 6 (margin: 10px, padding: 10px, border-width: 10px)</p>
+</body>
+
+</html>

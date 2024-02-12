@@ -1,0 +1,92 @@
+body {
+	border: 5px solid darkgrey;
+}
+
+.header {
+	font-size       : 24pt;
+	font-family     : sans-serif;
+	font-weight     : bold;
+	color           : black;
+	background-color: silver;
+	padding         : 10px 20px;
+	margin          : 0px;
+	border          : 1pt solid grey;
+}
+
+.article {
+	font-size  : 12pt;
+	font-family: serif;
+	font-weight: normal;
+	color      : black;
+	padding    : 5px;
+}
+
+#article1 {
+	background-color: paleturquoise;
+	border          : 1pt solid turquoise;
+}
+
+#article2 {
+	background-color: palegreen;
+	border          : 1pt solid mediumseagreen;
+}
+
+#article3 {
+	background-color: lightskyblue;
+	border          : 1pt solid deepskyblue;
+}
+
+.aside {
+	font-size  : 10pt;
+	font-family: serif;
+	font-weight: normal;
+	color      : black;
+	padding    : 3px;
+}
+
+#aside1 {
+	background-color: lightcoral;
+	border          : 1pt solid firebrick;
+}
+
+.navigation {
+	font-size  : 14pt;
+	font-family: sans-serif;
+	font-weight: bold;
+	color      : black;
+}
+
+.navitem {
+	padding  : 5px;
+	min-width: 100px;
+}
+
+#navitem1 {
+	background-color: PapayaWhip;
+	border          : 1pt solid gold;
+}
+
+#navitem2 {
+	background-color: Moccasin;
+	border          : 1pt solid gold;
+}
+
+#navitem3 {
+	background-color: PeachPuff;
+	border          : 1pt solid gold;
+}
+
+#navitem4 {
+	background-color: PaleGoldenrod;
+	border          : 1pt solid gold;
+}
+
+.footer {
+	font-size       : 14pt;
+	font-family     : sans-serif;
+	font-weight     : bold;
+	color           : black;
+	background-color: silver;
+	padding         : 10px 20px;
+	border          : 1pt solid grey;
+}

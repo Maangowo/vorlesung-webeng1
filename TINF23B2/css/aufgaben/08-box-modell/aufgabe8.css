@@ -1,0 +1,41 @@
+body {
+    margin: 0px;
+}
+
+#a {
+    width   : 200px;
+    height  : 200px;
+    position: absolute;
+    margin  : 10px;
+    padding : 20px;
+    border  : 1px solid red;
+}
+
+#b {
+    width       : 150px;
+    height      : 50px;
+    margin      : 5px;
+    padding     : 15px;
+    border-style: solid;
+    border      : 1px solid green;
+}
+
+#c {
+    width  : 150px;
+    height : 50px;
+    margin : 5px;
+    padding: 15px;
+    border : 1px solid blue;
+    float  : left;
+}
+
+#d {
+    width   : 150px;
+    height  : 50px;
+    margin  : 5px;
+    padding : 15px;
+    border  : 1px solid orange;
+    position: fixed;
+    top     : 75px;
+    left    : 90px;
+}

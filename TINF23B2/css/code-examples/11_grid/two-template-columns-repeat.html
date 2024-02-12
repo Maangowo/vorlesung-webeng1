@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>
+        CSS - grid-template-repeat
+    </title>
+    <style>
+        .grid {
+            display: grid;
+            border: 2px solid black;
+            margin-bottom: 10px;
+        }
+        div div {
+            border: 1px solid red;
+        }
+    </style>
+</head>
+
+<body>
+    <b>grid-template-columns: repeat(2, 1fr);</b>
+    <div class="grid" style="grid-template-columns: repeat(2, 1fr);">
+        <div>Block 1</div>
+        <div>Block 2</div>
+        <div>Block 3</div>
+        <div>Block 4</div>
+        <div>Block 5</div>
+        <div>Block 6</div>
+    </div>
+    <b>grid-template-columns: repeat(auto-fill, 16em);</b>
+    <div class="grid" style="grid-template-columns: repeat(auto-fill, 16em);">
+        <div>Block 1</div>
+        <div>Block 2</div>
+        <div>Block 3</div>
+        <div>Block 4</div>
+        <div>Block 5</div>
+        <div>Block 6</div>
+    </div>
+    <b>grid-template-columns: minmax(min-content, 300px) minmax(200px, 1fr) 150px;</b>
+    <div class="grid" style="grid-template-columns: minmax(min-content, 300px) minmax(200px, 1fr) 150px;">
+        <div>Item as wide as the content, but at most 300 pixels.</div>
+        <div>Item with flexible width but a minimum of 200 pixels.</div>
+        <div>Inflexible item of 150 pixels width.</div>
+    </div>
+</body>
+
+</html>

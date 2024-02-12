@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>
+        CSS - align-items
+    </title>
+    <style>
+        .flexbox {
+            display: flex;
+            border: 2px solid black;
+            margin-bottom: 10px;
+            justify-content: space-around;
+        }
+        div div {
+            border: 1px solid red;
+        }
+        .small {
+            height: 20px;
+        }
+        .bigger {
+            height: 30px;
+        }
+        .biggest {
+            height: 45px;
+        }
+        .bigger-font {
+            font-size: 30px;
+        }
+        .biggest-font {
+            font-size: 40px;
+        }
+    </style>
+</head>
+
+<body>
+    <b>align-items: flex-start;</b>
+    <div class="flexbox" style="align-items: flex-start;">
+        <div class="small">Block 1</div>
+        <div class="bigger">Block 2</div>
+        <div class="small">Block 3</div>
+        <div class="biggest">Block 4</div>
+        <div class="bigger">Block 5</div>
+        <div class="small">Block 6</div>
+    </div>
+    <b>align-items: flex-end;</b>
+    <div class="flexbox" style="align-items: flex-end;">
+        <div class="small">Block 1</div>
+        <div class="bigger">Block 2</div>
+        <div class="small">Block 3</div>
+        <div class="biggest">Block 4</div>
+        <div class="bigger">Block 5</div>
+        <div class="small">Block 6</div>
+    </div>
+    <b>align-items: center;</b>
+    <div class="flexbox" style="align-items: center;">
+        <div class="small">Block 1</div>
+        <div class="bigger">Block 2</div>
+        <div class="small">Block 3</div>
+        <div class="biggest">Block 4</div>
+        <div class="bigger">Block 5</div>
+        <div class="small">Block 6</div>
+    </div>
+    <b>align-items: baseline;</b>
+    <div class="flexbox" style="align-items: baseline;">
+        <div class="small">Block 1</div>
+        <div class="bigger bigger-font">Block 2</div>
+        <div class="small">Block 3</div>
+        <div class="biggest biggest-font">Block 4</div>
+        <div class="bigger bigger-font">Block 5</div>
+        <div class="small">Block 6</div>
+    </div>
+</body>
+
+</html>
