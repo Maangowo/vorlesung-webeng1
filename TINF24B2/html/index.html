@@ -9,7 +9,7 @@
 
 	<link rel="stylesheet" href="dist/reset.css">
 	<link rel="stylesheet" href="dist/reveal.css">
-	<link rel="stylesheet" href="dist/theme/white.css">
+	<link rel="stylesheet" href="dist/theme/white.css" id="theme">
 
 	<!-- Theme used for syntax highlighted code -->
 	<link rel="stylesheet" href="plugin/highlight/monokai.css">
@@ -19,6 +19,10 @@
 			position: absolute;
 			top: 12px;
 			right: 12px;
+		}
+
+		iframe {
+			background-color: white;
 		}
 
 		iframe.code-example {
@@ -54,6 +58,15 @@
 
 		.highlight-whitespace-red {
 			background-color: red;
+		}
+
+		.toggleDarkmode {
+			background-color: #FFFFFF;
+			border: 1px solid #222222;
+			border-radius: 8px;
+			color: #222222;
+			text-align: center;
+			text-decoration: none;
 		}
 	</style>
 </head>
@@ -474,9 +487,21 @@
 			$('.slide-background').append(header);
 		});
 	</script>
+	<script>
+		function toggleDarkmode() {
+			const themeLink = document.getElementById('theme');
+
+			if (themeLink.getAttribute('href') == 'dist/theme/white.css') {
+				themeLink.setAttribute('href', 'dist/theme/black.css');
+			} else {
+				themeLink.setAttribute('href', 'dist/theme/white.css');
+			}
+		}
+	</script>
 	<div id="hidden" style="display:none;">
-		<header>
-			<img height="40" src="dhbw-logo-small.svg" alt="DHBW-Logo">
+		<header style="display: flex; flex-direction: row; align-items: center;">
+			<img style="padding-right: 15px" height="40" src="dhbw-logo-small.svg" alt="DHBW-Logo">
+			<button class="toggleDarkmode" onclick="toggleDarkmode()">&#9788;</button>
 		</header>
 	</div>
 </body>
