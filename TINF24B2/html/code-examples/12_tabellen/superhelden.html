@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="utf-8" />
+    <title>HTML Tabellen</title>
+    <style>
+        caption {
+            padding: 8px;
+        }
+
+        table {
+            border-collapse: collapse;
+            border: 2px solid rgb(100, 100, 100);
+        }
+
+        td,
+        th {
+            border: 1px solid rgb(100, 100, 100);
+            padding: 10px 10px;
+        }
+
+        td {
+            text-align: center;
+        }
+
+        .batman {
+            background-color: #d7d9f2;
+        }
+
+        .flash {
+            background-color: #ffe8d4;
+        }
+    </style>
+</head>
+
+<body>
+    <table>
+        <caption>Superheros and sidekicks</caption>
+        <colgroup>
+            <col>
+            <col span="2" class="batman">
+            <col span="2" class="flash">
+        </colgroup>
+        <tr>
+            <td> </td>
+            <th scope="col">Batman</th>
+            <th scope="col">Robin</th>
+            <th scope="col">The Flash</th>
+            <th scope="col">Kid Flash</th>
+        </tr>
+        <tr>
+            <th scope="row">Skill</th>
+            <td>Smarts</td>
+            <td>Dex, acrobat</td>
+            <td>Super speed</td>
+            <td>Super speed</td>
+        </tr>
+    </table>
+</body>
+
+</html>

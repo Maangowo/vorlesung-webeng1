@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="utf-8" />
+    <title>HTML Tabelle Strukturierter</title>
+    <style>
+        table td {
+            border-bottom: 1px solid black;
+        }
+        table tfoot td {
+            border-top: 1px dashed black;
+            border-bottom: 1px solid black;
+        }
+        table tbody tr:last-child td {
+            border-bottom: none;
+        }
+    </style>
+</head>
+
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>Artikel</th>
+                <th>Preis</th>
+                <th>Menge</th>
+            </tr>
+        </thead>
+        <tfoot>
+            <tr>
+                <td>Summe</td>
+                <td colspan="2">7,97€</td>
+            </tr>
+        </tfoot>
+        <tbody>
+            <tr>
+                <td>Honig</td>
+                <td>1,99€</td>
+                <td>2</td>
+            </tr>
+            <tr>
+                <td>Butter</td>
+                <td>3,99€</td>
+                <td>1</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+
+</html>

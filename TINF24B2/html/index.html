@@ -331,15 +331,17 @@
 					<ul>
 						<li>Absätze: &lt;p&gt;&lt;/p&gt;
 							<ul>
-								<li>Beginnt mit einer neuen Zeile, danacht folgt ein Zeilenumbruch.</li>
+								<li>Beginnt mit einer neuen Zeile</li>
 								<li>Standard: Abstand vor und nach dem Absatz.</li>
 							</ul>
 						</li>
 						<li>Überschriften: &lt;h1&gt;&lt;/h1&gt;...&lt;h6&gt;&lt;/h6&gt;
 							<ul>
-								<li>Beginnt jeweils mit einer neuen Zeile, danach folgt ein Zeilenumbruch.</li>
-								<li>&lt;h1&gt; ist die höchstrangige Überschrift, &lt;h6&gt; die niedrigstrangige.</li>
-								<li>Von &lt;h1&gt; nach &lt;h6&gt; wird die Schrift und die Abstände kleiner.</li>
+								<li>Beginnt jeweils mit einer neuen Zeile</li>
+								<li>&lt;h1&gt; nach &lt;h6&gt; semantisch Rangabsteigend</li>
+								<li>Standard: Von &lt;h1&gt; nach &lt;h6&gt; wird die Schrift und die Abstände kleiner.</li>
+								<li>Nur eine &lt;h1&gt; in einem Dokument</li>
+								<li>Korrekte Schachtelung beachten:<br>z.B. auf eine &lt;h2&gt; muss &lt;h3&gt; folgen</li>
 							</ul>
 						</li>
 					</ul>
@@ -459,6 +461,762 @@
 				</section>
 			</section>
 			<!-- Ende HTML-Day1 -->
+			<!-- Start HTML-Day2 -->
+			<section>
+				<section>
+					<h3>Bisherige Tags</h3>
+					<ul>
+						<li>h1, h2, h3, h4, h5, h6</li>
+						<li>p, br</li>
+						<li>b, i</li>
+						<li>sup, sub</li>
+					</ul>
+					<p>Sind diese Tags alle gleichwertig?</p>
+				</section>
+			</section>
+			<section>
+				<section>
+					<h3>Block- vs. Inline-Elemente</h3>
+					<ul>
+						<li>Block-Elemente
+							<ul>
+								<li>können Block- oder Inline-Elemente enthalten</li>
+								<li class="fragment" data-fragment-index="1">beginnt mit einer neuen Zeile davor und
+									danach</li>
+								<li class="fragment" data-fragment-index="1">(üblicherweise) mit Abstand davor und
+									danach</li>
+								<li class="fragment" data-fragment-index="2">bisher: h1 ... h6, p</li>
+							</ul>
+						</li>
+						<li class="fragment" data-fragment-index="3">Inline-Elemente
+							<ul>
+								<li class="fragment" data-fragment-index="3">dürfen keine Blockelemente enthalten</li>
+								<li class="fragment" data-fragment-index="4">Kein (extra) Zeilenumbruch</li>
+								<li class="fragment" data-fragment-index="4">(üblicherweise) keine Abstände</li>
+								<li class="fragment" data-fragment-index="5">bisher: b, i, sup, sub, br</li>
+							</ul>
+						</li>
+					</ul>
+				</section>
+				<section>
+					<h3>HTML - Block- vs. Inline-Elemente</h3>
+					<iframe class="code-example full-width"
+						data-src="./code-examples/06_block-inline-elemente/falsch.html"></iframe>
+					<pre class="language-html">
+						<code class="hljs" data-code="./code-examples/06_block-inline-elemente/falsch.html" data-line-numbers="9-13"></code>
+					</pre>
+					<aside class="notes">
+						Richtig oder falsch? Falsch!
+						<a href="https://validator.w3.org/nu/">https://validator.w3.org/nu/</a>
+					</aside>
+				</section>
+				<section>
+					<h3>HTML - Block- vs. Inline-Elemente</h3>
+					<iframe class="code-example full-width"
+						data-src="./code-examples/06_block-inline-elemente/richtig.html"></iframe>
+					<pre class="language-html">
+						<code class="hljs" data-code="./code-examples/06_block-inline-elemente/richtig.html" data-line-numbers="9-13"></code>
+					</pre>
+					<aside class="notes">
+						Richtig oder falsch? Richtig!
+					</aside>
+				</section>
+			</section>
+			<section>
+				<section>
+					<h3>Tags und Attribute</h3>
+					<ul>
+						<li class="fragment" data-fragment-index="1">Tags können mit Attributen versehen werden
+							<ul>
+								<li>&lt;tagname attribut1="value1" attribut2="value2"&gt;&lt;/tagname&gt;</li>
+								<li>Beispiel: &lt;p lang="fr"&gt; ... &lt;/p&gt;</li>
+							</ul>
+						</li>
+					</ul>
+					<p class="fragment" data-fragment-index="2">Zugelassene Attribute sind abhänging vom Tag.</p>
+					<p class="fragment" data-fragment-index="2">Einige Attribute sind global, also für alle Tags
+						zulässig.</p>
+				</section>
+				<section>
+					<h3>Wichtige Globale Attribute</h3>
+					<ul>
+						<li>id - Eindeutiger Name des Elementes
+							<ul>
+								<li>Wert: eindeutiger Name ohne Leerzeichen</li>
+							</ul>
+						</li>
+						<li class="fragment">class - Zuordnung des Elements zu einer oder mehreren Gruppen
+							<ul>
+								<li>Wert: unsortierte Liste von Namen</li>
+							</ul>
+						</li>
+						<li class="fragment">lang - Sprache des Elementinhalts
+							<ul>
+								<li>Wert: Sprachbezeichner (z.B. de, en, en-us, ...)</li>
+							</ul>
+						</li>
+						<li class="fragment" title="Zusatzinformation">title - Zusatzinformation ("advisory
+							information")
+							<ul>
+								<li>Wert: beliebiger Text</li>
+								<li>Taucht üblicherweise als Tooltip auf
+								</li>
+								<li>Wird an Unterelemente vererbt</li>
+							</ul>
+						</li>
+					</ul>
+					<aside class="notes">
+						Hover auf Tooltip nicht vergessen
+					</aside>
+				</section>
+				<section>
+					<h3>Mehr Wichtige Globale Attribute</h3>
+					<ul>
+						<li>dir - Schreibrichtung
+							<ul>
+								<li>Wert: "ltr" (left to right), "rtl" (right to left), "auto"</li>
+							</ul>
+						</li>
+						<li class="fragment">tabindex - Tabulator-Reihenfolge
+							<ul>
+								<li>Wert: Zahl (ganzzahlig, aufsteigend)</li>
+							</ul>
+						</li>
+						<li class="fragment">spellcheck - Rechtschreibprüfung
+							<ul>
+								<li>Wert: "true" or "false"</li>
+								<li>Browser entscheidet ob er es anwendet<br>(z.B. typischerweise nur editierbare
+									Elemente)</li>
+							</ul>
+						</li>
+						<li class="fragment">hidden - Verbergen eines Elements
+							<ul>
+								<li>Wert: leer oder "hidden" (Case-Insensitiv)</li>
+								<li>Markiert nicht (mehr) relevante Elemente</li>
+							</ul>
+						</li>
+					</ul>
+				</section>
+				<section>
+					<h3>Mehr Wichtige Globale Attribute 2</h3>
+					<ul>
+						<li>contenteditable - Editierbarkeit
+							<ul>
+								<li>Wert: leer, "true", "false"</li>
+								<li>Falls leer oder "true" kann Inhalt editiert werden</li>
+							</ul>
+						</li>
+						<li class="fragment">translate - Übersetzbarkeit
+							<ul>
+								<li>Wert: leer, "true", "false"</li>
+								<li>Legt fest, ob der Inhalt übersetzt werden darf.</li>
+								<li>Wird an Unterelemente vererbt</li>
+							</ul>
+						</li>
+						<li class="fragment">data-* - anwendungsspezifische Daten
+							<ul>
+								<li>Wert: beliebiger Text</li>
+								<li>&lt;span data-nummer="1234"&gt;Max Müller&lt;/span&gt;</li>
+								<li>Clientseitige Logik kann auf Werte zugreifen</li>
+							</ul>
+						</li>
+					</ul>
+				</section>
+				<section>
+					<h3>Globale Attribute Drag&Drop</h3>
+					<ul>
+						<li>draggable - mit der Maus ziehbar
+							<ul>
+								<li>Wert: "true", "false"</li>
+							</ul>
+						</li>
+						<li class="fragment" data-fragment-index="1">dropzone - Ablageort für ziehbare Elemente
+							<ul>
+								<li>Wert: unsortierte Liste aus "copy", "move", "link", "string: [*]", "file: [*]"</li>
+								<li>Achtung: in gängigen Browsern noch nicht unterstützt :(</li>
+							</ul>
+						</li>
+						<li class="fragment" data-fragment-index="1">ondragover - Eventhandler
+							<ul>
+								<li>Wert: JavaScript Funktion</li>
+								<li>Unterstützung durch alle Browser</li>
+							</ul>
+						</li>
+					</ul>
+				</section>
+				<section>
+					<h3>Globale Attribute CSS</h3>
+					<ul>
+						<li>style - direkte Stilangabe
+							<ul>
+								<li>Wert: CSS-Eigenschaften</li>
+							</ul>
+						</li>
+					</ul>
+				</section>
+			</section>
+			<section>
+				<section>
+					<h3>Semantische Auszeichnung</h3>
+					<h4><code>&lt;strong&gt;</code> & <code>&lt;b&gt;</code></h4>
+					<ul>
+						<li>Beide Tags sorgen für einen fettgedruckten Text</li>
+						<li class="fragment">Das b-Tag hat weniger semantisches gewicht</li>
+						<li class="fragment">Das b-Tag sollte z.B. verwendet werden für Stichwörter oder Produkt-Namen. Es soll Aufmerksamkeit auf sich ziehen ohne eine Notwendigkeit zu suggerieren.</li>
+						<li class="fragment">Das strong-Tag sollte wichtige Inhalte hervorheben oder dann verwendet werden wenn dringlichkeit Vermittelt werden soll.</li>
+					</ul>
+				</section>
+				<section>
+					<h3>Semantische Auszeichnung</h3>
+					<ul>
+						<li class="fragment" data-fragment-index="1">em &ndash; emphasis (Betonung)</li>
+						<li class="fragment" data-fragment-index="2">strong &ndash; "strong importance" (hohe
+							Wichtigkeit)</li>
+						<li class="fragment" data-fragment-index="3">mark &ndash; marked (Markiert)</li>
+					</ul>
+					<p class="smaller-font">Optische Textauszeichnung</p>
+					<ul class="smaller-font">
+						<li class="fragment" data-fragment-index="1">i &ndash; italics (kursive Schrift)</li>
+						<li class="fragment" data-fragment-index="2">b &ndash; bold (Fettdruck)</li>
+						<li class="fragment" data-fragment-index="3">u &ndash; underline (Unterstrichen)</li>
+					</ul>
+					<p class="fragment smaller-font" data-fragment-index="4">Betonung, hohe Wichtigkeit,
+						Markierung:<br>&lt;em&gt;<em>semantische</em>&lt;/em&gt;
+						Auszeichnung</p>
+					<p class="fragment smaller-font" data-fragment-index="4">kursive Schrift,
+						Fettdruck:<br>&lt;b&gt;<b>optische</b>&lt;/b&gt; Auszeichnung</p>
+				</section>
+				<section>
+					<h3>Semantische Auszeichnung</h3>
+					<iframe class="code-example full-width"
+						data-src="./code-examples/07_semantische-textauszeichnung/semantische-textauszeichnung.html"></iframe>
+					<pre class="language-html">
+						<code class="hljs" data-code="./code-examples/07_semantische-textauszeichnung/semantische-textauszeichnung.html" data-line-numbers="9-14"></code>
+					</pre>
+				</section>
+				<section>
+					<h3>Semantische Auszeichnung<br>Inline-Beispiele</h3>
+					<ul>
+						<li>dfn &ndash; Begriffsdefinition<ul>
+								<li>Üblicherweise kursiv</li>
+							</ul>
+						</li>
+						<li>cite &ndash; Zitatangabe<ul>
+								<li>Üblicherweise kursiv</li>
+							</ul>
+						</li>
+						<li class="fragment" data-fragment-index="1">abbr &ndash; Abkürzung oder Akronym<ul>
+								<li>Üblicherweise keine besondere Formatierung</li>
+							</ul>
+						</li>
+						<li class="fragment" data-fragment-index="2">time &ndash; Zeitangabe<ul>
+								<li>Attribut "datetime" für maschinenlesbare Form!</li>
+							</ul>
+						</li>
+						<li class="fragment" data-fragment-index="2">code &ndash; Text der (Programmier)-Code darstellt<ul>
+								<li>Üblicherweise Schreibmaschinenschrift</li>
+							</ul>
+						</li>
+					</ul>
+				</section>
+				<section>
+					<h3>Semantische Auszeichnung<br>Block-Beispiele</h3>
+					<ul>
+						<li>hr &ndash; Thematischer Wechsel<ul>
+								<li>Üblicherweise eine horizontale Linie</li>
+							</ul>
+						</li>
+						<li class="fragment">pre &ndash; Vorfomartierter Text<ul>
+								<li>Stellt auch Leerzeichen, Zeilen und Umbrüche dar</li>
+								<li>Üblicherweise Schreibmaschinenschrift</li>
+							</ul>
+						</li>
+						<li class="fragment">blockquote &ndash; Zitat auf Absatzebene<ul>
+								<li>Üblicherweise beidseitig eingerückt, z.B. <a href="#/5">Memex</a></li>
+							</ul>
+						</li>
+						<li class="fragment">figure &ndash; "Abbildung"<ul>
+								<li>in sich geschlossener, vom Text getrennter Inhalt</li>
+								<li>optionale Unterschrift: &lt;figcaption&gt;</li>
+							</ul>
+						</li>
+					</ul>
+				</section>
+				<section>
+					<h3>Semantische Auszeichnung<br>Block-Beispiele</h3>
+					<ul>
+						<li>article &ndash; Artikel<ul>
+								<li>Abgeschlossener, unabhängiger Inhalt</li>
+							</ul>
+						</li>
+						<li class="fragment" data-fragment-index="1">section &ndash; Abschnitt<ul>
+								<li class="smaller-font">Thematisch zusammengehöriger Teil mit Überschrift</li>
+							</ul>
+						</li>
+						<li class="fragment" data-fragment-index="2">aside &ndash; Randbemerkung
+						</li>
+						<li class="fragment" data-fragment-index="3">header/main/footer &ndash; einleitender-, haupt-,
+							abschließender Teil
+						</li>
+						<li class="fragment" data-fragment-index="3">nav &ndash; Navigation
+						</li>
+						<li class="fragment" data-fragment-index="4">address &ndash; Kontaktinformation<ul>
+								<li>Kontakt zum Inhalteersteller!!</li>
+							</ul>
+						</li>
+					</ul>
+					<aside class="notes">
+						section und aside auch bei revealjs, aber section in section keine Ueberschrift also Warnings im
+						Syntax-Checker :(
+					</aside>
+				</section>
+			</section>
+			<section>
+				<section>
+					<h3>Screen Reader</h3>
+					<p>Accessibility (a11y) oft Teil der nicht-funktionalen Anforderungen<br><span class="fragment">und
+							Screen-Reader unterstützung ist ein Teil davon</span></p>
+					<p class="fragment">Essentielles Werkzeug um sehbehinderten Menschen Zugang zu ermöglichen</p>
+					<p class="fragment">Leben von der semantischen Auszeichnung und korrekten Beschreibung von Inhalten
+					</p>
+				</section>
+				<section>
+					<h3>Screen Reader</h3>
+					<ul>
+						<li>Android: <a
+								href="https://support.google.com/accessibility/android/answer/6283677?hl=en">TalkBack</a>
+						</li>
+						<li>iOS: <a
+								href="https://support.apple.com/guide/iphone/turn-on-and-practice-voiceover-iph3e2e415f/ios">VoiceOver</a>
+						</li>
+						<li>MacOS: <a href="https://support.apple.com/guide/voiceover/welcome/mac">VoiceOver</a></li>
+						<li>Windows: <a
+								href="https://support.microsoft.com/en-us/windows/complete-guide-to-narrator-e4397a0d-ef4f-b386-d8ae-c172f109bdb1">Narrator</a>
+						</li>
+						<li>Linux/Gnome: <a href="https://help.gnome.org/users/orca/stable/">Orca</a></li>
+					</ul>
+				</section>
+				<section>
+					<h3>Screen Reader</h3>
+					<h4>Good-Semantics</h4>
+					<iframe class="code-example full-width"
+						data-src="./code-examples/13_screen-reader/good-semantics.html"></iframe>
+					<h4>Bad-Semantics</h4>
+					<iframe class="code-example full-width"
+						data-src="./code-examples/13_screen-reader/bad-semantics.html"></iframe>
+				</section>
+				<section>
+					<h3>Good-Semantics</h3>
+					<pre class="language-html">
+						<code class="hljs" data-code="./code-examples/13_screen-reader/good-semantics.html" data-line-numbers="11-15"></code>
+					</pre>
+					<p>MacOS-VoiceOver:<br><samp>You are currently on a heading level 1,<br>inside web content
+							[...]</samp></p>
+				</section>
+				<section>
+					<h3>Bad-Semantics</h3>
+					<pre class="language-html">
+						<code class="hljs" data-code="./code-examples/13_screen-reader/bad-semantics.html" data-line-numbers="11-15"></code>
+					</pre>
+					<p>MacOS-VoiceOver:<br><samp>You are currently on a text element,<br>inside web content [...]</samp>
+					</p>
+				</section>
+				<section>
+					<h3>a11y gone wrong</h3>
+					<img src="https://i.redd.it/dhq5ari1hoya1.png" alt="Accessibility fail">
+				</section>
+			</section>
+			<section>
+				<section>
+					<h3>Sonderzeichen in HTML</h3>
+					<p>Der verwendete Zeichensatz wird durch meta-Tag im Seitenkopf angegeben, z.B.:
+						"utf-8"<br>Ermöglicht: €$§²³
+						oder Umlaut äöüß</p>
+					<p class="fragment" data-fragment-index="1"><strong>Aber</strong>: Wie stelle ich reservierte
+						Zeichen dar?<br>z.B. &gt; oder &lt;</p>
+					<p class="fragment" data-fragment-index="1">Oder Zeichen die ich nicht einfach eingeben
+						kann?<br>z.B. &copy;&hearts;&trade;</p>
+				</section>
+				<section>
+					<h3>Sonderzeichen in HTML</h3>
+					<ul>
+						<li>Entity &ndash; Entität<ul>
+								<li>&amp;#Code-Nummer;&emsp;(Code-Nummer ist dezimal)</li>
+								<li>&amp;#xUTF8-Nummer;&emsp;(UTF8-Nummer ist dezimal)</li>
+								<li>&amp;Name;&emsp;(Name ist vordefiniert)</li>
+							</ul>
+						</li>
+						<li class="fragment" data-fragment-index="1">Verpflichtende vordefinierte Entitäten<ul>
+								<li>Anführungszeichen&emsp;&quot;&emsp;&amp;quot; oder &amp;#34;</li>
+								<li>Kaufmanns-Und&emsp;&amp;&emsp;&amp;amp; oder &amp;#38;</li>
+								<li>Kleiner&emsp;&lt;&emsp;&amp;lt; oder &amp;#60;</li>
+								<li>Größer&emsp;&gt;&emsp;&amp;gt; oder &amp;#62;</li>
+							</ul>
+						</li>
+						<li class="fragment" data-fragment-index="2">Viele weitere Entitäten:<br><a
+								href="https://html.spec.whatwg.org/multipage/named-characters.html#named-character-references">13.5
+								Named character references</a>, z.B. &amp;copy;&ensp;&copy;</li>
+					</ul>
+				</section>
+				<section>
+					<h3>Sonderzeichen in HTML</h3>
+					<img src="./images/umlaute-fail.jpg" alt="HTML Umlaute Fail Amazon">
+				</section>
+				<section>
+					<h3>Leerzeichen in HTML</h3>
+					<p>Problem: Multiple Leerzeichen werden ignoriert</p>
+					<p>Lösung: Entitäten!</p>
+					<h4 class="fragment" data-fragment-index="1">Non-Breaking-Space</h4>
+					<p class="fragment" data-fragment-index="1">5,29 &CenterDot;10<sup>-11</sup><span
+							class="highlight-whitespace-red">&NonBreakingSpace;</span>m</p>
+					<h4 class="fragment" data-fragment-index="2">Thin-Space</h4>
+					<p class="fragment" data-fragment-index="2">g<span
+							class="highlight-whitespace-red">&ThinSpace;</span>a<span
+							class="highlight-whitespace-red">&ThinSpace;</span>p<span class="fragment"
+							data-fragment-index="3"> oder drei<span
+								class="highlight-whitespace-red">&ThinSpace;&ThinSpace;&ThinSpace;</span>fach</span></p>
+					<h4 class="fragment" data-fragment-index="4">Thick-Space</h4>
+					<p class="fragment" data-fragment-index="4">g<span
+							class="highlight-whitespace-red">&ThickSpace;</span>a<span
+							class="highlight-whitespace-red">&ThickSpace;</span>p oder drei<span
+							class="highlight-whitespace-red">&ThickSpace;&ThickSpace;&ThickSpace;</span>fach</p>
+					<aside class="notes">
+						https://de.wikipedia.org/wiki/Bohrscher_Radius
+						SI-Wert
+					</aside>
+				</section>
+				<section>
+					<h3>Leerzeichen in HTML</h3>
+					<ul>
+						<li>&amp;nbsp; <span class="highlight-whitespace-red">&nbsp;</span></li>
+						<li>&amp;ensp; <span class="highlight-whitespace-red">&ensp;</span></li>
+						<li>&amp;emsp; <span class="highlight-whitespace-red">&emsp;</span></li>
+						<li class="fragment" data-fragment-index="1">&amp;hairsp; <span
+								class="highlight-whitespace-red">&hairsp;</span></li>
+						<li class="fragment" data-fragment-index="2">&amp;VeryThinSpace; <span
+								class="highlight-whitespace-red">&VeryThinSpace;</span></li>
+						<li class="fragment" data-fragment-index="3">&amp;HilbertSpace; &HilbertSpace;</li>
+					</ul>
+					<p class="fragment" data-fragment-index="3">The hell is a <a
+							href="https://en.wikipedia.org/wiki/Hilbert_space">"Hilbert space"</a></p>
+				</section>
+				<section>
+					<h3>Hilbert space</h3>
+					<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/Hilbert.jpg/220px-Hilbert.jpg"
+						alt="David Hilbert">
+				</section>
+			</section>
+			<section>
+				<section>
+					<h3>Praxis - Aufgabe 2 - Pythagoras</h3>
+					<p>Schreiben Sie den Satz des Pythagoras in HTML.</p>
+					<h3>Praxis - Aufgabe 3 - Tags</h3>
+					<p>Testen Sie die Wirkungen der Auszeichnungen auf den vorangegangenen Folien, z.B.: b, i, sup, sub,
+						br, hr, dfn, abbr, cite, time, samp, pre, blockquote, figure, article, section, aside,
+						header, footer, nav, address<br><br>
+						Welche haben im Standard eine sichtbare Wirkung?<br>
+						Unterscheidet sich die Darstellung in den Browsern?
+					</p>
+				</section>
+			</section>
+			<section>
+				<section>
+					<h3>Lösung - Aufgabe 2 - Pythagoras</h3>
+					<p>
+						Code: <a
+							href="https://gitlab.com/chr1shaefn3r-dhbw/vorlesung-webeng1/-/blob/master/TINF23B2/html/aufgaben/02-pythagoras/loesung.html">gitlab.com/.../TINF23B2/html/aufgaben/<br>02-pythagoras/loesung.html</a><br>
+						Deployed: <a
+							href="https://chr1shaefn3r-dhbw.gitlab.io/vorlesung-webeng1/TINF23B2/html/aufgaben/02-pythagoras/loesung.html">gitlab.io/.../TINF23B2/html/aufgaben/<br>02-pythagoras/loesung.html</a>
+					</p>
+					<h3>Lösung - Aufgabe 3 - Tags</h3>
+					<p>
+						Code: <a
+							href="https://gitlab.com/chr1shaefn3r-dhbw/vorlesung-webeng1/-/blob/master/TINF23B2/html/aufgaben/03-tags/loesung.html">gitlab.com/.../TINF23B2/html/aufgaben/<br>03-tags/loesung.html</a><br>
+						Deployed: <a
+							href="https://chr1shaefn3r-dhbw.gitlab.io/vorlesung-webeng1/TINF23B2/html/aufgaben/03-tags/loesung.html">gitlab.io/.../TINF23B2/html/aufgaben/<br>03-tags/loesung.html</a>
+					</p>
+				</section>
+			</section>
+			<section>
+				<section>
+					<h3>Unsortierte Liste</h3>
+					<ul>
+						<li>ul &ndash; Unsortierte Liste (unordered list)<ul>
+								<li>Üblicherweise dargestellt mit einem Punkt</li>
+							</ul>
+						</li>
+						<li>li &ndash; Listen-Element (list element)<ul>
+								<li>Einzelnes Listen-Element</li>
+							</ul>
+						</li>
+					</ul>
+				</section>
+				<section>
+					<h3>HTML - Unsortierte Liste</h3>
+					<iframe class="code-example full-width"
+						data-src="./code-examples/09_unsortierte-liste/unsortierte-liste.html"></iframe>
+					<pre class="language-html">
+						<code class="hljs" data-code="./code-examples/09_unsortierte-liste/unsortierte-liste.html" data-line-numbers="9-15|10,14|11-13"></code>
+					</pre>
+				</section>
+				<section>
+					<h3>Sortierte Liste</h3>
+					<ul>
+						<li>ol &ndash; sortierte Liste (ordered list)<ul>
+								<li>Üblicherweise dargestellt mit arabischen Zahlen</li>
+							</ul>
+						</li>
+					</ul>
+					<p>Kann durch Attribute eingestellt werden!</p>
+					<ul class="fragment">
+						<li>reversed &ndash; Zählung umdrehen<ul>
+								<li>Wert: leer oder "reversed"</li>
+							</ul>
+						</li>
+						<li>start &ndash; Startwert der Nummerierung<ul>
+								<li>Wert: ganze Zahl</li>
+							</ul>
+						</li>
+						<li>type &ndash; Typ des Zählers<ul>
+								<li>Wert: "1", "a", "A", "i", "I"</li>
+							</ul>
+						</li>
+					</ul>
+					<aside class="notes">
+						decimal, lower-alpha, upper-alpha, lower-roman, upper-roman
+					</aside>
+				</section>
+				<section>
+					<h3>HTML Sortierte Liste</h3>
+					<iframe class="code-example full-width"
+						data-src="./code-examples/08_sortierte-liste/sortierte-liste.html"></iframe>
+					<pre class="language-html">
+						<code class="hljs" data-code="./code-examples/08_sortierte-liste/sortierte-liste.html" data-line-numbers="9-15|10,14"></code>
+					</pre>
+				</section>
+				<section>
+					<h3>HTML Sortierte Liste</h3>
+					<iframe class="code-example full-width"
+						data-src="./code-examples/08_sortierte-liste/sortierte-liste_reversed-upper-alpha.html"></iframe>
+					<pre class="language-html">
+						<code class="hljs" data-code="./code-examples/08_sortierte-liste/sortierte-liste_reversed-upper-alpha.html" data-line-numbers="9-15|10"></code>
+					</pre>
+				</section>
+				<section>
+					<h3>Geschachtelte Liste</h3>
+					<iframe class="code-example full-width"
+						data-src="./code-examples/10_geschachtelte-liste/geschachtelte-liste.html"></iframe>
+					<pre class="language-html">
+						<code class="hljs" data-code="./code-examples/10_geschachtelte-liste/geschachtelte-liste.html" data-line-numbers="9-19|11-16"></code>
+					</pre>
+				</section>
+				<section>
+					<h3>Listen - Definitionsliste</h3>
+					<ul>
+						<li>dl &ndash; Definitionsliste (definition list)<ul>
+								<li>Stellt Name und Beschreibung üblicherweise eingerückt dar</li>
+							</ul>
+						</li>
+						<li>dt &ndash; Definitionsname (definition term)<ul>
+								<li>zu definierender Begriff</li>
+							</ul>
+						</li>
+						<li>dd &ndash; Definition (description details)<ul>
+								<li>die Definition selbst</li>
+							</ul>
+						</li>
+					</ul>
+				</section>
+				<section>
+					<h3>Listen - Definitionsliste</h3>
+					<iframe class="code-example full-width"
+						data-src="./code-examples/11_definitions-liste/definitions-liste.html"></iframe>
+					<pre class="language-html">
+						<code class="hljs" data-code="./code-examples/11_definitions-liste/definitions-liste.html" data-line-numbers="9-17"></code>
+					</pre>
+				</section>
+			</section>
+			<section>
+				<section>
+					<h3>HTML Tabellen</h3>
+					<h4>DO</h4>
+					<p>strukturierte und gro&szlig;e Datenmengen Anzeigen</p>
+					<h4 class="fragment" data-fragment-index="1">DON'T</h4>
+					<p class="fragment" data-fragment-index="1">Seitenaufbau (Header, Footer, Content) realisieren</p>
+				</section>
+				<section>
+					<h3>HTML Tabellen</h3>
+					<ul>
+						<li>table &ndash; Tabelle<ul>
+								<li>Umfasst die gesamte Tabelle</li>
+							</ul>
+						</li>
+						<li>tr &ndash; Tabellenzeile (table row)<ul>
+								<li>deklariert eine neue Zeile</li>
+							</ul>
+						</li>
+						<li>td &ndash; Tabelleninhalt (table data)<ul>
+								<li>Definiert den Inhalt eine Zelle</li>
+							</ul>
+						</li>
+					</ul>
+				</section>
+				<section>
+					<h3>HTML Tabellen</h3>
+					<iframe class="code-example full-width"
+						data-src="./code-examples/12_tabellen/tabelle-grundstruktur.html"></iframe>
+					<pre class="language-html">
+					<code class="hljs" data-code="./code-examples/12_tabellen/tabelle-grundstruktur.html" data-line-numbers="9-22"></code>
+				</pre>
+				</section>
+				<section>
+					<h3>HTML Tabellen</h3>
+					<p>Mehr Tags innerhalb des table-Element:</p>
+					<ul>
+						<li>caption &ndash; Überschrift (Legende)<ul>
+								<li>Üblicherweise über der Tabelle dargestellt</li>
+							</ul>
+						</li>
+						<li class="fragment">th &ndash; Spalten/Zeilen-Überschrift (table header)<ul>
+								<li>"scope" Attribut mit Wert "row" oder "col"</li>
+							</ul>
+						</li>
+						<li class="fragment">colgroup &ndash; Spaltenanzahl festlegen (columns)<ul>
+								<li>Definiert die Anzahl vorhandener Spalten</li>
+								<li>col &ndash; Spalte (column), empty tag<ul>
+										<li>"span" Attribut mit Wert ganze Zahl größer 0</li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+					</ul>
+					<aside class="notes">
+						there is no rowgroup
+					</aside>
+				</section>
+				<section>
+					<h3>Spalten, Unter- und Überschrift</h3>
+					<iframe class="code-example full-width"
+						data-src="./code-examples/12_tabellen/superhelden.html"></iframe>
+					<pre class="language-html">
+					<code class="hljs" data-code="./code-examples/12_tabellen/superhelden.html" data-line-numbers="37-60"></code>
+				</pre>
+				</section>
+				<section>
+					<h3>Spalten, Unter- und Überschrift - Code</h3>
+					<pre class="language-html">
+					<code class="hljs" data-code="./code-examples/12_tabellen/superhelden_table_focused.html"></code>
+				</pre>
+				</section>
+				<section>
+					<h3>Zellen zusammenfassen</h3>
+					<p>Attribute für td-Elemente:</p>
+					<ul>
+						<li>colspan &ndash; Spalten zusammenfassen<ul>
+								<li>Wert: ganze Zahl größer 0</li>
+							</ul>
+						</li>
+						<li>rowspan &ndash; Zeilen zusammenfassen<ul>
+								<li>Wert: ganze Zahl größer 0</li>
+							</ul>
+						</li>
+					</ul>
+				</section>
+				<section>
+					<h3>Zellen (zusammenfassen)</h3>
+					<iframe class="code-example full-width" data-src="./code-examples/12_tabellen/zellen.html"></iframe>
+					<pre class="language-html">
+					<code class="hljs" data-code="./code-examples/12_tabellen/zellen.html" data-line-numbers="9-24"></code>
+				</pre>
+				</section>
+				<section>
+					<h3>Zellen zusammenfassen</h3>
+					<iframe class="code-example full-width"
+						data-src="./code-examples/12_tabellen/zellen-zusammengefasst.html"></iframe>
+					<pre class="language-html">
+						<code class="hljs" data-code="./code-examples/12_tabellen/zellen-zusammengefasst.html" data-line-numbers="9-24"></code>
+					</pre>
+				</section>
+				<section>
+					<h3>Tabelle Strukturierter</h3>
+					<ul>
+						<li>thead &ndash; Kopfzeile</li>
+						<li>tbody &ndash; Tabelleninhalt</li>
+						<li>tfoot &ndash; Fu&szlig;zeile</li>
+					</ul>
+				</section>
+				<section>
+					<h3>Tabelle Strukturierter</h3>
+					<iframe class="code-example full-width"
+						data-src="./code-examples/12_tabellen/tabelle-strukturierter.html"></iframe>
+					<pre class="language-html">
+						<code class="hljs" data-code="./code-examples/12_tabellen/tabelle-strukturierter.html" data-line-numbers="23-29|30-35|36-47"></code>
+					</pre>
+				</section>
+				<section>
+					<h3>Last but not least</h3>
+					<p>Tabellen lassen sich schachteln (wie Listen)</p>
+				</section>
+			</section>
+			<section>
+				<section>
+					<h3>Praxis - Aufgabe 4 - Liste</h3>
+					<p>Erstellen Sie eine Liste mit 5 Einträgen. Diese sollen in römischer Darstellung abwärts ab 50
+						gezählt werden.</p>
+				</section>
+				<section>
+					<h3>Praxis - Aufgabe 5 - Listen</h3>
+					<p>Erstellen Sie eine Liste mit 3 Listen-Ebenen</p>
+					<ul>
+						<li>Die erste Ebene hat 3 Einträge und ist ungeordnet.</li>
+						<li>Der erste Eintrag der ersten Ebene ist eine Liste mit 3 Einträgen geordnet nach
+							kleiner römischer zählweise aufwärts beginnen mit "ii"</li>
+						<li>Der zweite Eintrag der ersten Ebene besteht aus einer ungeordneten Liste mit 2
+							Einträgen.</li>
+						<li>Der dritte Eintrag der ersten Ebene besteht aus einer geordneten Liste gezählt mit
+							Kleinbuchstaben, dessen erster Eintrag wiederum eine Definitionsliste mit 3
+							Einträgen enthält.</li>
+					</ul>
+				</section>
+				<section>
+					<h3>Praxis - Aufgabe 6 - Tabelle</h3>
+					<p>Wie lautet der Code für die unten angezeigte Tabelle? (Tipp: Tabellen lassen sich Schachteln wie
+						Listen)</p>
+					<img src="./images/praxis-tabelle-aufgabe.jpg" alt="Praxis Tabelle Aufgabe">
+					<p>Zusatzfrage: Was passiert, wenn die Anzahl der Zellen einer Zeile nicht der Anzahl der Spalten
+						der Tabelle entspricht (mehr/weniger)?</p>
+				</section>
+			</section>
+			<section>
+				<section>
+					<h3>Lösung - Aufgabe 4 - Liste</h3>
+					<p>
+						Code: <a
+							href="https://gitlab.com/chr1shaefn3r-dhbw/vorlesung-webeng1/-/blob/master/TINF23B2/html/aufgaben/04-liste/loesung.html">gitlab.com/.../TINF23B2/html/aufgaben/<br>04-liste/loesung.html</a><br>
+						Deployed: <a
+							href="https://chr1shaefn3r-dhbw.gitlab.io/vorlesung-webeng1/TINF23B2/html/aufgaben/04-liste/loesung.html">gitlab.io/.../TINF23B2/html/aufgaben/<br>04-liste/loesung.html</a>
+					</p>
+					<h3>Lösung - Aufgabe 5 - Listen</h3>
+					<p>
+						Code: <a
+							href="https://gitlab.com/chr1shaefn3r-dhbw/vorlesung-webeng1/-/blob/master/TINF23B2/html/aufgaben/05-listen/loesung.html">gitlab.com/.../TINF23B2/html/aufgaben/<br>05-listen/loesung.html</a><br>
+						Deployed: <a
+							href="https://chr1shaefn3r-dhbw.gitlab.io/vorlesung-webeng1/TINF23B2/html/aufgaben/05-listen/loesung.html">gitlab.io/.../TINF23B2/html/aufgaben/<br>05-listen/loesung.html</a>
+					</p>
+				</section>
+				<section>
+					<h3>Lösung - Aufgabe 6 - Tabelle</h3>
+					<p>
+						Code:<br><a
+							href="https://gitlab.com/chr1shaefn3r-dhbw/vorlesung-webeng1/-/blob/master/TINF23B2/html/aufgaben/06-tabelle/loesung.html">gitlab.com/.../TINF23B2/html/aufgaben/<br>06-tabelle/loesung.html</a>
+					</p>
+					<p>
+						Deployed:<br><a
+							href="https://chr1shaefn3r-dhbw.gitlab.io/vorlesung-webeng1/TINF23B2/html/aufgaben/06-tabelle/loesung.html">gitlab.io/.../TINF23B2/html/aufgaben/<br>06-tabelle/loesung.html</a>
+					</p>
+				</section>
+			</section>
+			<!-- Ende HTML-Day2 -->
 		</div>
 	</div>
 
