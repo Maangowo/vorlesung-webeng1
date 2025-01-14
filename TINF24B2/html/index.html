@@ -339,9 +339,11 @@
 							<ul>
 								<li>Beginnt jeweils mit einer neuen Zeile</li>
 								<li>&lt;h1&gt; nach &lt;h6&gt; semantisch Rangabsteigend</li>
-								<li>Standard: Von &lt;h1&gt; nach &lt;h6&gt; wird die Schrift und die Abstände kleiner.</li>
+								<li>Standard: Von &lt;h1&gt; nach &lt;h6&gt; wird die Schrift und die Abstände kleiner.
+								</li>
 								<li>Nur eine &lt;h1&gt; in einem Dokument</li>
-								<li>Korrekte Schachtelung beachten:<br>z.B. auf eine &lt;h2&gt; muss &lt;h3&gt; folgen</li>
+								<li>Korrekte Schachtelung beachten:<br>z.B. auf eine &lt;h2&gt; muss &lt;h3&gt; folgen
+								</li>
 							</ul>
 						</li>
 					</ul>
@@ -462,6 +464,66 @@
 			</section>
 			<!-- Ende HTML-Day1 -->
 			<!-- Start HTML-Day2 -->
+			<section>
+				<section>
+					<h3>Was bisher geschah</h3>
+					<img src="./images/was-bisher-geschah.jpg" alt="Was bisher gescah">
+				</section>
+				<section>
+					<h3>Tags & Attribute</h3>
+					<ul>
+						<li>Tag-Struktur: &lt;tagname&gt;&lt;/tagname&gt;</li>
+						<li><span style="color:green">Richtig</span>:&nbsp;&lt;<span
+								style="color: blue">tag1</span>&gt;&lt;tag2&gt;&lt;/tag2&gt;&lt;/<span
+								style="color: blue">tag1</span>&gt;</li>
+						<li>Attribute-Struktur:<br>&lt;tagname attribut1="value1" attribut2="value2"...&gt;</li>
+						<li>Empty Tags: kein Inhalt, kein schließendes Tag</li>
+					</ul>
+				</section>
+				<section>
+					<h3>Textauszeichnungen</h3>
+					<ul>
+						<li>Absätze: &lt;p&gt;&lt;/p&gt;
+							<ul>
+								<li>Beginnt mit einer neuen Zeile</li>
+								<li>Standard: Abstand vor und nach dem Absatz.</li>
+							</ul>
+						</li>
+						<li>Überschriften: &lt;h1&gt;&lt;/h1&gt;...&lt;h6&gt;&lt;/h6&gt;
+							<ul>
+								<li>Beginnt jeweils mit einer neuen Zeile</li>
+								<li>&lt;h1&gt; nach &lt;h6&gt; semantisch Rangabsteigend</li>
+								<li>Standard: Von &lt;h1&gt; nach &lt;h6&gt; wird die Schrift und die Abstände kleiner.
+								</li>
+								<li>Nur eine &lt;h1&gt; in einem Dokument</li>
+								<li>Korrekte Schachtelung beachten:<br>z.B. auf eine &lt;h2&gt; muss &lt;h3&gt; folgen
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</section>
+				<section>
+					<h3>Aufbau eines HTML-Dokuments</h3>
+					<ul>
+						<li>Dokumenttyp-Deklaration
+							<ul>
+								<li>HTML5: &lt;!DOCTYPE html&gt;</li>
+							</ul>
+						</li>
+						<li>Dokument (&lt;html&gt;) besteht aus:
+							<ul>
+								<li>Kopfdaten: &lt;head&gt;&lt;/head&gt;
+									<ul>
+										<li>&lt;title&gt;</li>
+										<li>&lt;meta charset="utf8"&gt;</li>
+									</ul>
+								</li>
+								<li>Inhalt: &lt;body&gt;&lt;/body&gt;</li>
+							</ul>
+						</li>
+					</ul>
+				</section>
+			</section>
 			<section>
 				<section>
 					<h3>Bisherige Tags</h3>
@@ -662,8 +724,10 @@
 					<ul>
 						<li>Beide Tags sorgen für einen fettgedruckten Text</li>
 						<li class="fragment">Das b-Tag hat weniger semantisches gewicht</li>
-						<li class="fragment">Das b-Tag sollte z.B. verwendet werden für Stichwörter oder Produkt-Namen. Es soll Aufmerksamkeit auf sich ziehen ohne eine Notwendigkeit zu suggerieren.</li>
-						<li class="fragment">Das strong-Tag sollte wichtige Inhalte hervorheben oder dann verwendet werden wenn dringlichkeit Vermittelt werden soll.</li>
+						<li class="fragment">Das b-Tag sollte z.B. verwendet werden für Stichwörter oder Produkt-Namen.
+							Es soll Aufmerksamkeit auf sich ziehen ohne eine Notwendigkeit zu suggerieren.</li>
+						<li class="fragment">Das strong-Tag sollte wichtige Inhalte hervorheben oder dann verwendet
+							werden wenn dringlichkeit Vermittelt werden soll.</li>
 					</ul>
 				</section>
 				<section>
@@ -713,7 +777,8 @@
 								<li>Attribut "datetime" für maschinenlesbare Form!</li>
 							</ul>
 						</li>
-						<li class="fragment" data-fragment-index="2">code &ndash; Text der (Programmier)-Code darstellt<ul>
+						<li class="fragment" data-fragment-index="2">code &ndash; Text der (Programmier)-Code darstellt
+							<ul>
 								<li>Üblicherweise Schreibmaschinenschrift</li>
 							</ul>
 						</li>
