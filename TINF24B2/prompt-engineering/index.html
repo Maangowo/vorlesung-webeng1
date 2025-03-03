@@ -157,29 +157,36 @@
 					<tr>
 						<td></td>
 						<th scope="col">Template o3-mini (Z)</th>
+						<th scope="col">o3-mini (K)</th>
 					</tr>
 					<tr>
 						<th scope="row">Semant HTML</th>
+						<td>✅</td>
 						<td>✅</td>
 					</tr>
 					<tr>
 						<th scope="row">Valides HTML</th>
 						<td>✅</td>
+						<td>✅</td>
 					</tr>
 					<tr>
 						<th scope="row">Mod JS</th>
 						<td>❌</td>
+						<td>✅</td>
 					</tr>
 					<tr>
 						<th scope="row">Clean Code</th>
 						<td>❌</td>
+						<td>✅</td>
 					</tr>
 					<tr>
 						<th scope="row">D&amp;D Feedback</th>
 						<td>❌</td>
+						<td>✅</td>
 					</tr>
 					<tr>
 						<th scope="row">Respon Design</th>
+						<td>✅</td>
 						<td>✅</td>
 					</tr>
 				</table>
@@ -212,6 +219,92 @@ Final promot: Create a website that...
 						<li>Drag&Drop Feedback (Dropzones hervorheben, etc.)<br>Dropzones mit blauem Rahmen hervorgehoben</li>
 						<li>minimale L&ouml;sung (kein Framework, keine Umwege)<br>Check</li>
 						<li>Responsive Design (Handy, Tablet, Desktop)<br>Check</li>
+					</ul>
+				</section>
+			</section>
+			<section>
+				<section>
+					<h2>Gruppe K: ChatGPT (o3-mini)</h2>
+					<h3>Prompt um Prompt zu generieren</h3>
+					<textarea style="width: 90%; min-height: 200px">
+Erstelle mir eine Prompt welche folgende Aufgabe in javascript umsetzen soll 
+	Kanban-Board mit:
+		-Drei Spalten: "ToDo", "In Progress", "Done"
+		-Drei Karten-Arten:"Bug" (rot), "User Story" (grün), "Task" (blau)
+		-Zwei Karten-Eigenschaen: Titel, Beschreibung,
+		-Arbeitspacketgröße in Stunden
+		-Erstellen und löschen von Karten
+		-Verschieben von Karten per Drag&Drop
+		-Dunkles Responsive Layout/Design
+					</textarea>
+				</section>
+				<section>
+					<h2>Gruppe K: ChatGPT (o3-mini)</h2>
+					<h3 id="final-prompt">Final Prompt</h3>
+					<textarea style="width: 100%; min-height: 400px">
+Erstelle eine Kanban-Board-Anwendung in JavaScript mit folgenden Anforderungen:
+
+1. **Spalten:**
+	- Drei Spalten: &quot;ToDo&quot;, &quot;In Progress&quot;, &quot;Done&quot;
+	- Jede Spalte soll als Container für Karten fungieren.
+
+2. **Karten-Arten:**
+	- Es gibt drei Arten von Karten:
+		- &quot;Bug&quot; (rot)
+		- &quot;User Story&quot; (grün)
+		- &quot;Task&quot; (blau)
+	- Karten sollen dynamisch hinzugefügt werden können, wobei der Kartentyp ausgewählt wird (Bug, User Story, oder Task).
+
+3. **Karten-Eigenschaften:**
+	- Jede Karte soll die folgenden Eigenschaften haben:
+		- **Titel** (Textfeld für den Titel der Aufgabe)
+		- **Beschreibung** (Textfeld für eine detaillierte Beschreibung)
+		- **Arbeitspaketgröße in Stunden** (Zahl, die die geschätzte Zeit für die Aufgabe in Stunden darstellt)
+
+4. **Interaktive Funktionen:**
+	- **Erstellen von Karten**: Benutzer können neue Karten mit den oben genannten Eigenschaften in jeder der drei Spalten 
+	erstellen.
+	- **Löschen von Karten**: Jede Karte soll eine Löschoption haben, um sie zu entfernen.
+	- **Verschieben von Karten**: Karten sollen per Drag &amp; Drop zwischen den Spalten verschoben werden können. Hierbei sollen 
+	die Dropzones hervogehoben werden, damit der Nutzer diese leichter erkennt 
+						
+5. **Design und Layout:**
+	- **Dunkles Design**: Die Benutzeroberfläche soll ein dunkles Theme haben, mit passenden Farben für Hintergrund, Karten 
+	und Text.
+	- **Responsive Layout**: Das Layout soll responsiv sein, sodass es auf verschiedenen Bildschirmgrößen gut funktioniert, 
+	einschließlich mobilen Geräten.
+						
+6. **Technische Anforderungen:**
+	- Der HTML-Code soll semantisch sein, also keine divs enthalten
+	- Achte bitte unbedingt darauf, dass alle angegebenen funktionen auch korrekt ausgeführt werden können
+	- Verwende HTML, CSS und JavaScript (optional: mit einer Bibliothek wie dragula.js für Drag&amp;Drop).
+	- Nutze ein flexibles Grid-System (z.B. CSS Flexbox oder CSS Grid), um die Spalten und Karten korrekt auszurichten und 
+	das Layout anzupassen.
+	- Verwende JavaScript, um dynamisch Karten zu erstellen, zu löschen und zu verschieben.
+	- Das verschieben von Karten soll eine flüssige animation haben, um die Seite grundsätzlich ansprechender aussehen 
+	zu lassen.
+					</textarea>
+				</section>
+				<section>
+					<h2>Gruppe K: ChatGPT (o3-mini)</h2>
+					<iframe style="width: 100%; min-height: 450px"
+						data-src="https://chr1shaefn3r-dhbw.gitlab.io/vorlesung-webeng1/TINF24B2/prompt-engineering/ergebnisse/gruppe-k-chatgpt-o3-mini/index.html"></iframe>
+				</section>
+				<section>
+					<h2>Gruppe K: ChatGPT (o3-mini)</h2>
+					<ul>
+						<li>Semantisches HTML<br>✅ Sections</li>
+						<li>Valides HTML<br><a href="https://validator.w3.org/nu/?showsource=yes&doc=https%3A%2F%2Fchr1shaefn3r-dhbw.gitlab.io%2Fvorlesung-webeng1%2FTINF24B2%2Fprompt-engineering%2Fergebnisse%2Fgruppe-k-chatgpt-o3-mini%2Findex.html">✅ W3 Validator sagt passt so</a></li>
+						<li>Modernes JavaScript (kein var, etc.)<br>✅ Check</li>
+						<li>Clean Code<br>✅ Alles durchkommentiert, ansprechende Funktionsnamen, sieht gut aus</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Gruppe K: ChatGPT (o3-mini)</h2>
+					<ul>
+						<li>Drag&Drop Feedback (Dropzones hervorheben, etc.)<br>✅ Dropzone leuchtet grau auf</li>
+						<li>minimale L&ouml;sung<br>✅ Check (keine Frameworks, alles in einer Datei)</li>
+						<li>Responsive Design (Handy, Tablet, Desktop)<br>✅ Check, Mit Android und Apple Geräten getestet</li>
 					</ul>
 				</section>
 			</section>
